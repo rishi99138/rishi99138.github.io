@@ -1,4 +1,4 @@
-// Modern JavaScript for Portfolio Interactivity
+// Modern JavaScript for Portfolio Interactivity with Dark Mode
 
 document.addEventListener('DOMContentLoaded', function() {
     // Loading Screen
@@ -9,6 +9,32 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             loader.style.display = 'none';
         }, 500);
+    });
+
+    // Dark Mode Toggle Functionality
+    const themeSwitch = document.getElementById('theme-switch');
+    const currentTheme = localStorage.getItem('theme');
+    
+    // Apply saved theme on page load
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            themeSwitch.checked = true;
+        }
+    } else {
+        // Default to light theme
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+    
+    // Theme switch functionality
+    themeSwitch.addEventListener('change', function(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
     });
 
     // Navbar Scroll Effect
@@ -141,60 +167,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Particle Effect for Hero Section (Optional Enhancement)
-    function createParticles() {
-        const hero = document.querySelector('.hero');
-        const particleCount = 50;
-
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.cssText = `
-                position: absolute;
-                width: 2px;
-                height: 2px;
-                background: rgba(99, 102, 241, 0.3);
-                border-radius: 50%;
-                pointer-events: none;
-                left: ${Math.random() * 100}%;
-                top: ${Math.random() * 100}%;
-                animation: float ${5 + Math.random() * 10}s ease-in-out infinite;
-                animation-delay: ${Math.random() * 5}s;
-            `;
-            hero.appendChild(particle);
-        }
-    }
-
-    // Initialize particles
-    createParticles();
-
-    // Typewriter Effect for Hero Title (Optional)
-    function typewriterEffect() {
-        const titleLines = document.querySelectorAll('.title-line');
-        const texts = [
-            "Hi, I'm",
-            "Rishi Mandal", 
-            "Cybersecurity Expert"
-        ];
-
-        titleLines.forEach((line, index) => {
-            const originalText = texts[index];
-            line.textContent = '';
-            
-            setTimeout(() => {
-                let charIndex = 0;
-                const typeInterval = setInterval(() => {
-                    line.textContent += originalText[charIndex];
-                    charIndex++;
-                    
-                    if (charIndex === originalText.length) {
-                        clearInterval(typeInterval);
-                    }
-                }, 100);
-            }, index * 1000);
-        });
-    }
-
     // Scroll-triggered Counters
     function animateCounters() {
         const counters = document.querySelectorAll('.stat-number');
@@ -225,66 +197,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize counter animation
     animateCounters();
 
-    // Add CSS for particles and animations
-    const style = document.createElement('style');
-    style.textContent = `
-        .animate-in {
-            animation: slideInUp 0.8s ease forwards;
+    // Keyboard Navigation Support
+    document.addEventListener('keydown', function(e) {
+        // Toggle theme with Ctrl + Shift + T
+        if (e.ctrlKey && e.shiftKey && e.key === 'T') {
+            e.preventDefault();
+            themeSwitch.click();
         }
-        
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .nav-menu.active {
-            display: flex;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: white;
-            flex-direction: column;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            z-index: 999;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-});
+    });
 
-// Add custom cursor effect (Optional)
-document.addEventListener('mousemove', function(e) {
-    const cursor = document.querySelector('.custom-cursor');
-    if (!cursor) {
-        const newCursor = document.createElement('div');
-        newCursor.className = 'custom-cursor';
-        newCursor.style.cssText = `
-            width: 20px;
-            height: 20px;
-            border: 2px solid #6366f1;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: all 0.1s ease;
-            transform: translate(-50%, -50%);
-        `;
-        document.body.appendChild(newCursor);
+    // System theme preference detection
+    function detectSystemTheme() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+        }
+        return 'light';
     }
-    
-    document.querySelector('.custom-cursor').style.left = e.clientX + 'px';
-    document.querySelector('.custom-cursor').style.top = e.clientY + 'px';
+
+    // Apply system theme if no preference is stored
+    if (!currentTheme) {
+        const systemTheme = detectSystemTheme();
+        document.documentElement.setAttribute('data-theme', systemTheme);
+        if (systemTheme === 'dark') {
+            themeSwitch.checked = true;
+        }
+    }
+
+    // Listen for system theme changes
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+            if (!localStorage.getItem('theme')) {
+                const newTheme = e.matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                themeSwitch.checked = e.matches;
+            }
+        });
+    }
 });
