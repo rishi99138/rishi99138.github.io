@@ -6,11 +6,7 @@ Welcome to my professional portfolio! I'm a 3rd-year Computer Science Engineerin
 **Visit my portfolio:** [https://rishi99138.github.io](https://rishi99138.github.io)
 
 ## About Me
-I'm passionate about safeguarding digital ecosystems through innovative security solutions and vulnerability assessment. My expertise focuses on:
-- Network Security & Protocol Analysis
-- Intrusion Detection Systems
-- Security Tool Development
-- Vulnerability Assessment
+I'm passionate about safeguarding digital ecosystems through innovative security solutions, vulnerability assessment, and cloud architecture. My expertise spans cybersecurity and modern cloud development.
 
 ## Featured Projects
 
@@ -24,12 +20,19 @@ I'm passionate about safeguarding digital ecosystems through innovative security
 - **Features:** Pattern recognition, automated alerts, comprehensive reporting
 - **Repository:** [View Project](https://github.com/rishi99138/nids-python)
 
+### AWS Serverless Portfolio
+- **Technologies:** AWS (S3, CloudFront, Lambda, API Gateway, DynamoDB), Node.js
+- **Features:** Serverless architecture, global CDN, real-time contact processing
+- **Live Demo:** [Visit Site](https://d6ilnbijb94mf.cloudfront.net)
+- **Repository:** [View Project](https://github.com/rishi99138/aws-serverless-portfolio)
+
 ## Skills & Technologies
 
 ### Programming Languages
 ![Python](https://img.shields.io/badge/Python-90%25-blue?style=flat-square&logo=python)
 ![C/C++](https://img.shields.io/badge/C%2FC%2B%2B-80%25-green?style=flat-square&logo=c)
 ![Java](https://img.shields.io/badge/Java-75%25-orange?style=flat-square&logo=java)
+![JavaScript](https://img.shields.io/badge/JavaScript-80%25-yellow?style=flat-square&logo=javascript)
 
 ### Cybersecurity
 - Network Security (85%)
@@ -37,9 +40,16 @@ I'm passionate about safeguarding digital ecosystems through innovative security
 - Intrusion Detection (88%)
 - Security Tools Development
 
+### Cloud & DevOps
+- AWS Cloud Services (S3, CloudFront, Lambda, API Gateway, DynamoDB)
+- Serverless Architecture Design
+- Infrastructure as Code
+- API Development
+
 ### Tools & Frameworks
 - Scapy, Npcap, ServiceNow
 - Git/GitHub, Socket Programming
+- AWS CLI, Node.js
 - Data Structures & Algorithms
 
 ## Education & Certifications
@@ -69,26 +79,28 @@ I'm passionate about safeguarding digital ecosystems through innovative security
 
 ## Currently Seeking
 - **Cybersecurity Internships** for Summer 2025
-- **Entry-level Security Analyst** positions
-- **Collaborative projects** in network security and penetration testing
+- **Cloud Security Engineer** positions
+- **Full-stack Developer** roles with security focus
+- **Collaborative projects** in network security and cloud architecture
 
 ## Portfolio Statistics
-- **Projects Completed:** 2+ Security-focused applications
-- **Technologies Mastered:** 5+ Programming languages and security tools
+- **Projects Completed:** 3+ Full-stack applications (Security + Cloud)
+- **Technologies Mastered:** 8+ Programming languages and cloud services
 - **Certifications:** 3+ Professional certifications and training programs
+- **Cloud Architecture:** Designed and deployed serverless solutions
 
 ## Updates
-- **Latest:** Added dark mode toggle for enhanced user experience (January 2025)
-- **Recent:** Enhanced mobile responsiveness and performance optimizations
-- **Upcoming:** Planning to add more cybersecurity projects and case studies
+- **Latest:** Added AWS Serverless Portfolio project demonstrating cloud expertise (July 2025)
+- **Recent:** Enhanced dark mode toggle and mobile responsiveness
+- **Upcoming:** Planning to add more cloud security projects and DevSecOps implementations
 
 ---
 
 ### Portfolio Highlights
-> "This portfolio demonstrates practical cybersecurity skills through real-world projects, showcasing both technical expertise and professional presentation abilities."
+> "This portfolio demonstrates practical cybersecurity skills and modern cloud architecture expertise through real-world projects, showcasing both technical depth and professional presentation abilities."
 
-**Last Updated:** January 2025  
-**Portfolio Version:** 2.0 (Dark Mode Edition)
+**Last Updated:** July 2025  
+**Portfolio Version:** 3.0 (Cloud Integration Edition)
 
 ---
 *Built with passion for cybersecurity and commitment to digital safety*
