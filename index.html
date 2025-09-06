@@ -13,13 +13,6 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Custom glassmorphism effect */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
         /* Custom gradient text */
         .gradient-text {
             background: linear-gradient(90deg, #38bdf8, #a78bfa);
@@ -40,47 +33,55 @@
         }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-300 selection:bg-sky-400 selection:text-slate-900">
+<body class="bg-white text-slate-700 dark:bg-slate-900 dark:text-slate-300 selection:bg-sky-400 selection:text-slate-900 transition-colors duration-300">
 
     <!-- Header & Navigation -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-xl font-bold tracking-wider gradient-text">Rishi Mandal</a>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
-                <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
+                <a href="#about" class="text-slate-800 dark:text-slate-200 hover:text-sky-500 dark:hover:text-sky-400 transition-colors">About</a>
+                <a href="#projects" class="text-slate-800 dark:text-slate-200 hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Projects</a>
+                <a href="#contact" class="text-slate-800 dark:text-slate-200 hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Contact</a>
                 <a href="2241013090_RishiMandal_ITER.pdf" target="_blank" class="bg-sky-500 hover:bg-sky-600 text-slate-900 font-medium py-2 px-4 rounded-lg transition-colors">Resume</a>
+                <button id="theme-toggle" class="text-slate-800 dark:text-slate-200 hover:text-sky-500 dark:hover:text-sky-400">
+                    <i id="theme-icon" data-lucide="moon" class="w-6 h-6"></i>
+                </button>
             </div>
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+            <div class="flex items-center gap-4 md:hidden">
+                <button id="theme-toggle-mobile" class="text-slate-800 dark:text-slate-200">
+                    <i id="theme-icon-mobile" data-lucide="moon" class="w-6 h-6"></i>
+                </button>
+                <button id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-800/80 backdrop-blur-sm">
-            <a href="#about" class="block py-3 px-6 text-center hover:bg-slate-700">About</a>
-            <a href="#projects" class="block py-3 px-6 text-center hover:bg-slate-700">Projects</a>
-            <a href="#contact" class="block py-3 px-6 text-center hover:bg-slate-700">Contact</a>
-            <a href="2241013090_RishiMandal_ITER.pdf" target="_blank" class="block py-3 px-6 text-center hover:bg-slate-700">Resume</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
+            <a href="#about" class="block py-3 px-6 text-center hover:bg-gray-100 dark:hover:bg-slate-700">About</a>
+            <a href="#projects" class="block py-3 px-6 text-center hover:bg-gray-100 dark:hover:bg-slate-700">Projects</a>
+            <a href="#contact" class="block py-3 px-6 text-center hover:bg-gray-100 dark:hover:bg-slate-700">Contact</a>
+            <a href="2241013090_RishiMandal_ITER.pdf" target="_blank" class="block py-3 px-6 text-center hover:bg-gray-100 dark:hover:bg-slate-700">Resume</a>
         </div>
     </header>
 
     <main>
         <!-- Home/Hero Section -->
-        <section id="home" class="h-screen flex items-center justify-center text-center bg-grid-slate-800/[0.2]">
+        <section id="home" class="h-screen flex items-center justify-center text-center dark:bg-grid-slate-800/[0.2]">
             <div class="max-w-3xl px-6">
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-100">
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
                     Hi, I'm <span class="gradient-text">Rishi Mandal</span>.
                     <br>
                     I engineer secure cloud & network solutions.
                 </h1>
-                <p class="mt-6 text-lg md:text-xl text-slate-400">
+                <p class="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-400">
                     A final year B.Tech student passionate about cybersecurity, cloud architectures, and solving real-world security challenges.
                 </p>
                 <div class="mt-8 flex justify-center gap-4">
                     <a href="#contact" class="bg-sky-500 hover:bg-sky-600 text-slate-900 font-semibold py-3 px-6 rounded-lg transition-transform hover:scale-105">Get In Touch</a>
-                    <a href="#projects" class="border border-slate-600 hover:bg-slate-800 text-slate-200 font-semibold py-3 px-6 rounded-lg transition-transform hover:scale-105">View My Work</a>
+                    <a href="#projects" class="border border-slate-300 dark:border-slate-600 hover:bg-gray-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold py-3 px-6 rounded-lg transition-transform hover:scale-105">View My Work</a>
                 </div>
             </div>
         </section>
@@ -89,13 +90,13 @@
         <section id="about" class="py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100">About Me</h2>
-                    <p class="text-sky-400 mt-2">A little bit about my journey</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100">About Me</h2>
+                    <p class="text-sky-500 dark:text-sky-400 mt-2">A little bit about my journey</p>
                 </div>
                 <div class="grid md:grid-cols-5 gap-12 items-center">
                     <div class="md:col-span-2 reveal">
                         <div class="relative">
-                            <div class="aspect-square bg-slate-800 rounded-2xl w-full max-w-sm mx-auto flex items-center justify-center">
+                            <div class="aspect-square bg-slate-100 dark:bg-slate-800 rounded-2xl w-full max-w-sm mx-auto flex items-center justify-center">
                                 <img src="rishistudiozoomout.jpg" alt="Rishi Mandal" class="rounded-2xl w-full h-full object-cover">
                             </div>
                             <div class="absolute -top-4 -right-4 w-24 h-24 bg-sky-500 rounded-full -z-10 animate-pulse"></div>
@@ -103,25 +104,25 @@
                         </div>
                     </div>
                     <div class="md:col-span-3 reveal">
-                        <h3 class="text-2xl font-semibold text-slate-100 mb-4">Crafting digital solutions with code and creativity.</h3>
-                        <p class="text-slate-400 mb-4">
+                        <h3 class="text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-4">Crafting digital solutions with code and creativity.</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-4">
                             Hello! I'm Rishi Mandal, a final year B.Tech student in CSE with a specialization in Cybersecurity. I have strong analytical skills and a passion for applying my technical expertise to solve complex security problems.
                         </p>
-                        <p class="text-slate-400 mb-6">
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">
                            I'm proficient in Python, cloud/serverless architectures, network forensics, and intrusion detection. I thrive on building secure, efficient, and scalable applications. When I'm not coding, I enjoy exploring the latest advancements in technology.
                         </p>
-                        <h4 class="text-lg font-semibold text-slate-100 mb-3">My Skills:</h4>
+                        <h4 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-3">My Skills:</h4>
                         <div class="flex flex-wrap gap-3">
-                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Python</span>
-                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">C/C++</span>
-                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Java</span>
-                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">AWS</span>
-                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Digital Forensics</span>
-                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Intrusion Detection</span>
-                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Malware Analysis</span>
-                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Git</span>
-                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Scapy</span>
-                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">ServiceNow</span>
+                            <span class="bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Python</span>
+                            <span class="bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">C/C++</span>
+                            <span class="bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Java</span>
+                            <span class="bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">AWS</span>
+                            <span class="bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Digital Forensics</span>
+                            <span class="bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Intrusion Detection</span>
+                            <span class="bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Malware Analysis</span>
+                            <span class="bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Git</span>
+                            <span class="bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Scapy</span>
+                            <span class="bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">ServiceNow</span>
                         </div>
                     </div>
                 </div>
@@ -129,43 +130,43 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-24 bg-slate-900/70">
+        <section id="projects" class="py-24 bg-slate-50 dark:bg-slate-900/70">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100">My Projects</h2>
-                    <p class="text-sky-400 mt-2">Some of the things I've built</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100">My Projects</h2>
+                    <p class="text-sky-500 dark:text-sky-400 mt-2">Some of the things I've built</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Project Card 1 -->
-                    <div class="glass-card rounded-xl overflow-hidden group reveal">
+                    <div class="bg-white dark:bg-slate-800/50 dark:backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden group reveal shadow-lg dark:shadow-none">
                         <img src="https://placehold.co/600x400/1e293b/38bdf8?text=NIDS" alt="Network Intrusion Detection System" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-slate-100 mb-2">Network Intrusion Detection System</h3>
-                            <p class="text-slate-400 mb-4">A real-time, multi-layer NIDS to detect port scans, SQL injection, XSS, and flooding attacks with a SOC-style dashboard.</p>
+                            <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-2">Network Intrusion Detection System</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-4">A real-time, multi-layer NIDS to detect port scans, SQL injection, XSS, and flooding attacks with a SOC-style dashboard.</p>
                             <div class="flex gap-4">
-                                <a href="https://github.com/rishi99138/Network-intrusion-detection-system-" target="_blank" class="text-sky-400 hover:text-sky-300 flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
+                                <a href="https://github.com/rishi99138/Network-intrusion-detection-system-" target="_blank" class="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300 flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
                             </div>
                         </div>
                     </div>
                     <!-- Project Card 2 -->
-                    <div class="glass-card rounded-xl overflow-hidden group reveal" style="transition-delay: 100ms;">
+                    <div class="bg-white dark:bg-slate-800/50 dark:backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden group reveal shadow-lg dark:shadow-none" style="transition-delay: 100ms;">
                         <img src="https://placehold.co/600x400/1e293b/a78bfa?text=Packet+Sniffer" alt="Network Packet Sniffer" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-slate-100 mb-2">Network Packet Sniffer</h3>
-                            <p class="text-slate-400 mb-4">Captures and analyzes packets (TCP, UDP, ICMP) with real-time filtering, deep inspection, and structured export to CSV/JSON.</p>
+                            <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-2">Network Packet Sniffer</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-4">Captures and analyzes packets (TCP, UDP, ICMP) with real-time filtering, deep inspection, and structured export to CSV/JSON.</p>
                             <div class="flex gap-4">
-                                <a href="https://github.com/rishi99138/Network-Packet-Sniffer" target="_blank" class="text-sky-400 hover:text-sky-300 flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
+                                <a href="https://github.com/rishi99138/Network-Packet-Sniffer" target="_blank" class="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300 flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
                             </div>
                         </div>
                     </div>
                     <!-- Project Card 3 -->
-                    <div class="glass-card rounded-xl overflow-hidden group reveal" style="transition-delay: 200ms;">
+                    <div class="bg-white dark:bg-slate-800/50 dark:backdrop-blur-sm border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden group reveal shadow-lg dark:shadow-none" style="transition-delay: 200ms;">
                         <img src="https://placehold.co/600x400/1e293b/f472b6?text=Serverless" alt="AWS Serverless Portfolio" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-slate-100 mb-2">AWS Serverless Portfolio</h3>
-                            <p class="text-slate-400 mb-4">A fully serverless site using S3, CloudFront, Lambda, and DynamoDB. Achieved low latency, 99.9% uptime, and CI/CD automation.</p>
+                            <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-2">AWS Serverless Portfolio</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-4">A fully serverless site using S3, CloudFront, Lambda, and DynamoDB. Achieved low latency, 99.9% uptime, and CI/CD automation.</p>
                             <div class="flex gap-4">
-                                <a href="https://github.com/rishi99138/aws-serverless-portfolio" target="_blank" class="text-sky-400 hover:text-sky-300 flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
+                                <a href="https://github.com/rishi99138/aws-serverless-portfolio" target="_blank" class="text-sky-600 dark:text-sky-400 hover:text-sky-500 dark:hover:text-sky-300 flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
                             </div>
                         </div>
                     </div>
@@ -177,11 +178,11 @@
         <section id="contact" class="py-24">
             <div class="container mx-auto px-6 text-center">
                  <div class="text-center mb-12 reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100">Get In Touch</h2>
-                    <p class="text-sky-400 mt-2">I'm currently open to new opportunities.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100">Get In Touch</h2>
+                    <p class="text-sky-500 dark:text-sky-400 mt-2">I'm currently open to new opportunities.</p>
                 </div>
                 <div class="max-w-2xl mx-auto reveal">
-                    <p class="text-slate-400 mb-8 text-lg">
+                    <p class="text-slate-600 dark:text-slate-400 mb-8 text-lg">
                         Have a project in mind or just want to say hello? My inbox is always open. Whether you have a question or just want to connect, feel free to reach out!
                     </p>
                     <a href="mailto:rishimandal99138@gmail.com" class="inline-block bg-sky-500 hover:bg-sky-600 text-slate-900 font-semibold text-lg py-4 px-8 rounded-lg transition-transform hover:scale-105">
@@ -193,13 +194,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900/50 border-t border-slate-800">
+    <footer class="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
         <div class="container mx-auto px-6 py-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <p class="text-slate-500">&copy; 2025 Rishi Mandal. All rights reserved.</p>
                 <div class="flex space-x-6">
-                    <a href="https://github.com/rishi99138" target="_blank" class="text-slate-500 hover:text-sky-400 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
-                    <a href="https://www.linkedin.com/in/rishi-mandal-00965231b/" target="_blank" class="text-slate-500 hover:text-sky-400 transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                    <a href="https://github.com/rishi99138" target="_blank" class="text-slate-500 hover:text-sky-500 dark:hover:text-sky-400 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
+                    <a href="https://www.linkedin.com/in/rishi-mandal-00965231b/" target="_blank" class="text-slate-500 hover:text-sky-500 dark:hover:text-sky-400 transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
                 </div>
             </div>
         </div>
@@ -209,14 +210,55 @@
         // Initialize Lucide icons
         lucide.createIcons();
 
-        // Mobile Menu Toggle
+        // --- THEME TOGGLE SCRIPT ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeIconMobile = document.getElementById('theme-icon-mobile');
+        const htmlEl = document.documentElement;
+
+        // Function to set theme
+        const setTheme = (theme) => {
+            if (theme === 'dark') {
+                htmlEl.classList.add('dark');
+                themeIcon.setAttribute('data-lucide', 'sun');
+                themeIconMobile.setAttribute('data-lucide', 'sun');
+            } else {
+                htmlEl.classList.remove('dark');
+                themeIcon.setAttribute('data-lucide', 'moon');
+                themeIconMobile.setAttribute('data-lucide', 'moon');
+            }
+            lucide.createIcons(); // Re-render icons
+            localStorage.setItem('theme', theme);
+        };
+
+        // Check for saved theme in localStorage or user's system preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            setTheme(prefersDark ? 'dark' : 'light');
+        }
+
+        // Event listener for theme toggle button
+        const toggleTheme = () => {
+            const currentTheme = htmlEl.classList.contains('dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        };
+
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        themeToggleMobileBtn.addEventListener('click', toggleTheme);
+
+        // --- MOBILE MENU SCRIPT ---
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when a link is clicked
         const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -224,17 +266,17 @@
             });
         });
 
-        // Header background on scroll
+        // --- HEADER SCROLL SCRIPT ---
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                header.classList.add('bg-slate-900/80', 'backdrop-blur-sm', 'shadow-lg');
+                header.classList.add('bg-white/80', 'dark:bg-slate-900/80', 'backdrop-blur-sm', 'shadow-lg');
             } else {
-                header.classList.remove('bg-slate-900/80', 'backdrop-blur-sm', 'shadow-lg');
+                header.classList.remove('bg-white/80', 'dark:bg-slate-900/80', 'backdrop-blur-sm', 'shadow-lg');
             }
         });
 
-        // Scroll reveal animation
+        // --- SCROLL REVEAL SCRIPT ---
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
