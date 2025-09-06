@@ -29,24 +29,24 @@
         }
     </style>
 </head>
-<body class="bg-stone-50 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 selection:bg-amber-500/20 selection:text-amber-800 dark:selection:text-amber-300 transition-colors duration-300">
+<body class="bg-violet-50 text-violet-950 dark:bg-indigo-950 dark:text-slate-200 selection:bg-pink-500/20 selection:text-pink-800 dark:selection:text-pink-300 transition-colors duration-300">
 
     <!-- Header & Navigation -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-xl font-bold tracking-wider text-zinc-900 dark:text-white">Rishi Mandal</a>
+            <a href="#home" class="text-xl font-bold tracking-wider text-violet-900 dark:text-white">Rishi Mandal</a>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="text-zinc-700 dark:text-zinc-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">About</a>
-                <a href="#projects" class="text-zinc-700 dark:text-zinc-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Projects</a>
-                <a href="#contact" class="text-zinc-700 dark:text-zinc-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Contact</a>
-                <a href="2241013090_RishiMandal_ITER.pdf" target="_blank" class="bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-lg transition-colors">Resume</a>
-                <button id="theme-toggle" class="text-zinc-700 dark:text-zinc-300 hover:text-amber-500 dark:hover:text-amber-400">
+                <a href="#about" class="text-violet-800 dark:text-slate-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors">About</a>
+                <a href="#projects" class="text-violet-800 dark:text-slate-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors">Projects</a>
+                <a href="#contact" class="text-violet-800 dark:text-slate-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors">Contact</a>
+                <a href="2241013090_RishiMandal_ITER.pdf" target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-lg transition-colors">Resume</a>
+                <button id="theme-toggle" class="text-violet-800 dark:text-slate-300 hover:text-pink-500 dark:hover:text-pink-400">
                     {/* Icon is injected here by JavaScript */}
                 </button>
             </div>
             <!-- Mobile Menu Button -->
             <div class="flex items-center gap-4 md:hidden">
-                <button id="theme-toggle-mobile" class="text-zinc-700 dark:text-zinc-300">
+                <button id="theme-toggle-mobile" class="text-violet-800 dark:text-slate-300">
                      {/* Icon is injected here by JavaScript */}
                 </button>
                 <button id="mobile-menu-btn">
@@ -55,11 +55,11 @@
             </div>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-stone-50/80 dark:bg-zinc-900/80 backdrop-blur-sm">
-            <a href="#about" class="block py-3 px-6 text-center hover:bg-stone-200 dark:hover:bg-zinc-800">About</a>
-            <a href="#projects" class="block py-3 px-6 text-center hover:bg-stone-200 dark:hover:bg-zinc-800">Projects</a>
-            <a href="#contact" class="block py-3 px-6 text-center hover:bg-stone-200 dark:hover:bg-zinc-800">Contact</a>
-            <a href="2241013090_RishiMandal_ITER.pdf" target="_blank" class="block py-3 px-6 text-center hover:bg-stone-200 dark:hover:bg-zinc-800">Resume</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-violet-50/80 dark:bg-indigo-950/80 backdrop-blur-sm">
+            <a href="#about" class="block py-3 px-6 text-center hover:bg-violet-200 dark:hover:bg-indigo-800">About</a>
+            <a href="#projects" class="block py-3 px-6 text-center hover:bg-violet-200 dark:hover:bg-indigo-800">Projects</a>
+            <a href="#contact" class="block py-3 px-6 text-center hover:bg-violet-200 dark:hover:bg-indigo-800">Contact</a>
+            <a href="2241013090_RishiMandal_ITER.pdf" target="_blank" class="block py-3 px-6 text-center hover:bg-violet-200 dark:hover:bg-indigo-800">Resume</a>
         </div>
     </header>
 
@@ -67,58 +67,58 @@
         <!-- Home/Hero Section -->
         <section id="home" class="h-screen flex items-center justify-center text-center">
             <div class="max-w-3xl px-6">
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white">
-                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-zinc-800 dark:from-amber-400 dark:to-zinc-200">Rishi Mandal</span>.
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-violet-950 dark:text-white">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-violet-800 dark:from-pink-400 dark:to-slate-200">Rishi Mandal</span>.
                     <br>
                     I engineer secure cloud & network solutions.
                 </h1>
-                <p class="mt-6 text-lg md:text-xl text-zinc-600 dark:text-zinc-400">
+                <p class="mt-6 text-lg md:text-xl text-violet-700 dark:text-violet-300">
                     A final year B.Tech student passionate about cybersecurity, cloud architectures, and solving real-world security challenges.
                 </p>
                 <div class="mt-8 flex justify-center gap-4">
-                    <a href="#contact" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform hover:scale-105">Get In Touch</a>
-                    <a href="#projects" class="border border-zinc-300 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-800 font-semibold py-3 px-6 rounded-lg transition-transform hover:scale-105">View My Work</a>
+                    <a href="#contact" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform hover:scale-105">Get In Touch</a>
+                    <a href="#projects" class="border border-violet-300 dark:border-violet-700 hover:bg-violet-100 dark:hover:bg-indigo-900 font-semibold py-3 px-6 rounded-lg transition-transform hover:scale-105">View My Work</a>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-24 bg-stone-100 dark:bg-zinc-950">
+        <section id="about" class="py-24 bg-violet-100 dark:bg-indigo-900">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white">About Me</h2>
-                    <p class="text-zinc-500 dark:text-zinc-400 mt-2">A little bit about my journey</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-violet-900 dark:text-white">About Me</h2>
+                    <p class="text-violet-600 dark:text-violet-300 mt-2">A little bit about my journey</p>
                 </div>
                 <div class="grid md:grid-cols-5 gap-12 items-center">
                     <div class="md:col-span-2 reveal">
                         <div class="relative">
-                            <div class="aspect-square bg-stone-200 dark:bg-zinc-800 rounded-2xl w-full max-w-sm mx-auto flex items-center justify-center">
+                            <div class="aspect-square bg-violet-200 dark:bg-indigo-800 rounded-2xl w-full max-w-sm mx-auto flex items-center justify-center">
                                 <img src="rishistudiozoomout.jpg" alt="Rishi Mandal" class="rounded-2xl w-full h-full object-cover">
                             </div>
-                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-amber-500/10 dark:bg-amber-400/10 rounded-full -z-10 animate-pulse"></div>
-                            <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-zinc-500/20 dark:bg-zinc-700/50 rounded-2xl -z-10 transform rotate-12"></div>
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-pink-500/10 dark:bg-pink-400/10 rounded-full -z-10 animate-pulse"></div>
+                            <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-violet-500/20 dark:bg-violet-700/50 rounded-2xl -z-10 transform rotate-12"></div>
                         </div>
                     </div>
                     <div class="md:col-span-3 reveal">
-                        <h3 class="text-2xl font-semibold text-zinc-900 dark:text-white mb-4">Crafting digital solutions with code and creativity.</h3>
-                        <p class="text-zinc-600 dark:text-zinc-400 mb-4">
+                        <h3 class="text-2xl font-semibold text-violet-900 dark:text-white mb-4">Crafting digital solutions with code and creativity.</h3>
+                        <p class="text-violet-700 dark:text-violet-300 mb-4">
                             Hello! I'm Rishi Mandal, a final year B.Tech student in CSE with a specialization in Cybersecurity. I have strong analytical skills and a passion for applying my technical expertise to solve complex security problems.
                         </p>
-                        <p class="text-zinc-600 dark:text-zinc-400 mb-6">
+                        <p class="text-violet-700 dark:text-violet-300 mb-6">
                            I'm proficient in Python, cloud/serverless architectures, network forensics, and intrusion detection. I thrive on building secure, efficient, and scalable applications. When I'm not coding, I enjoy exploring the latest advancements in technology.
                         </p>
-                        <h4 class="text-lg font-semibold text-zinc-900 dark:text-white mb-3">My Skills:</h4>
+                        <h4 class="text-lg font-semibold text-violet-900 dark:text-white mb-3">My Skills:</h4>
                         <div class="flex flex-wrap gap-3">
-                            <span class="bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 py-1.5 px-3 rounded-full text-sm font-medium">Python</span>
-                            <span class="bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 py-1.5 px-3 rounded-full text-sm font-medium">C/C++</span>
-                            <span class="bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 py-1.5 px-3 rounded-full text-sm font-medium">Java</span>
-                            <span class="bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 py-1.5 px-3 rounded-full text-sm font-medium">AWS</span>
-                            <span class="bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 py-1.5 px-3 rounded-full text-sm font-medium">Digital Forensics</span>
-                            <span class="bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 py-1.5 px-3 rounded-full text-sm font-medium">Intrusion Detection</span>
-                            <span class="bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 py-1.5 px-3 rounded-full text-sm font-medium">Malware Analysis</span>
-                            <span class="bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 py-1.5 px-3 rounded-full text-sm font-medium">Git</span>
-                            <span class="bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 py-1.5 px-3 rounded-full text-sm font-medium">Scapy</span>
-                            <span class="bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 py-1.5 px-3 rounded-full text-sm font-medium">ServiceNow</span>
+                            <span class="bg-violet-200 dark:bg-indigo-800 text-violet-800 dark:text-violet-200 py-1.5 px-3 rounded-full text-sm font-medium">Python</span>
+                            <span class="bg-violet-200 dark:bg-indigo-800 text-violet-800 dark:text-violet-200 py-1.5 px-3 rounded-full text-sm font-medium">C/C++</span>
+                            <span class="bg-violet-200 dark:bg-indigo-800 text-violet-800 dark:text-violet-200 py-1.5 px-3 rounded-full text-sm font-medium">Java</span>
+                            <span class="bg-violet-200 dark:bg-indigo-800 text-violet-800 dark:text-violet-200 py-1.5 px-3 rounded-full text-sm font-medium">AWS</span>
+                            <span class="bg-violet-200 dark:bg-indigo-800 text-violet-800 dark:text-violet-200 py-1.5 px-3 rounded-full text-sm font-medium">Digital Forensics</span>
+                            <span class="bg-violet-200 dark:bg-indigo-800 text-violet-800 dark:text-violet-200 py-1.5 px-3 rounded-full text-sm font-medium">Intrusion Detection</span>
+                            <span class="bg-violet-200 dark:bg-indigo-800 text-violet-800 dark:text-violet-200 py-1.5 px-3 rounded-full text-sm font-medium">Malware Analysis</span>
+                            <span class="bg-violet-200 dark:bg-indigo-800 text-violet-800 dark:text-violet-200 py-1.5 px-3 rounded-full text-sm font-medium">Git</span>
+                            <span class="bg-violet-200 dark:bg-indigo-800 text-violet-800 dark:text-violet-200 py-1.5 px-3 rounded-full text-sm font-medium">Scapy</span>
+                            <span class="bg-violet-200 dark:bg-indigo-800 text-violet-800 dark:text-violet-200 py-1.5 px-3 rounded-full text-sm font-medium">ServiceNow</span>
                         </div>
                     </div>
                 </div>
@@ -126,43 +126,43 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-24 bg-stone-50 dark:bg-zinc-900">
+        <section id="projects" class="py-24 bg-violet-50 dark:bg-indigo-950">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white">My Projects</h2>
-                    <p class="text-zinc-500 dark:text-zinc-400 mt-2">Some of the things I've built</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-violet-900 dark:text-white">My Projects</h2>
+                    <p class="text-violet-600 dark:text-violet-300 mt-2">Some of the things I've built</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Project Card 1 -->
-                    <div class="bg-stone-100 dark:bg-zinc-800/50 dark:backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden group reveal shadow-lg dark:shadow-black/20">
-                        <img src="https://placehold.co/600x400/18181b/a1a1aa?text=NIDS" alt="Network Intrusion Detection System" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="bg-violet-100 dark:bg-indigo-800/50 dark:backdrop-blur-sm border border-violet-200 dark:border-indigo-800 rounded-xl overflow-hidden group reveal shadow-lg dark:shadow-black/20">
+                        <img src="https://placehold.co/600x400/3730a3/f9a8d4?text=NIDS" alt="Network Intrusion Detection System" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-zinc-900 dark:text-white mb-2">Network Intrusion Detection System</h3>
-                            <p class="text-zinc-600 dark:text-zinc-400 mb-4">A real-time, multi-layer NIDS to detect port scans, SQL injection, XSS, and flooding attacks with a SOC-style dashboard.</p>
+                            <h3 class="text-xl font-semibold text-violet-900 dark:text-white mb-2">Network Intrusion Detection System</h3>
+                            <p class="text-violet-700 dark:text-violet-300 mb-4">A real-time, multi-layer NIDS to detect port scans, SQL injection, XSS, and flooding attacks with a SOC-style dashboard.</p>
                             <div class="flex gap-4">
-                                <a href="https://github.com/rishi99138/Network-intrusion-detection-system-" target="_blank" class="text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 font-medium flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
+                                <a href="https://github.com/rishi99138/Network-intrusion-detection-system-" target="_blank" class="text-pink-600 dark:text-pink-400 hover:text-pink-500 dark:hover:text-pink-300 font-medium flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
                             </div>
                         </div>
                     </div>
                     <!-- Project Card 2 -->
-                    <div class="bg-stone-100 dark:bg-zinc-800/50 dark:backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden group reveal shadow-lg dark:shadow-black/20" style="transition-delay: 100ms;">
-                        <img src="https://placehold.co/600x400/27272a/a1a1aa?text=Packet+Sniffer" alt="Network Packet Sniffer" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="bg-violet-100 dark:bg-indigo-800/50 dark:backdrop-blur-sm border border-violet-200 dark:border-indigo-800 rounded-xl overflow-hidden group reveal shadow-lg dark:shadow-black/20" style="transition-delay: 100ms;">
+                        <img src="https://placehold.co/600x400/4338ca/f9a8d4?text=Packet+Sniffer" alt="Network Packet Sniffer" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-zinc-900 dark:text-white mb-2">Network Packet Sniffer</h3>
-                            <p class="text-zinc-600 dark:text-zinc-400 mb-4">Captures and analyzes packets (TCP, UDP, ICMP) with real-time filtering, deep inspection, and structured export to CSV/JSON.</p>
+                            <h3 class="text-xl font-semibold text-violet-900 dark:text-white mb-2">Network Packet Sniffer</h3>
+                            <p class="text-violet-700 dark:text-violet-300 mb-4">Captures and analyzes packets (TCP, UDP, ICMP) with real-time filtering, deep inspection, and structured export to CSV/JSON.</p>
                             <div class="flex gap-4">
-                                <a href="https://github.com/rishi99138/Network-Packet-Sniffer" target="_blank" class="text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 font-medium flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
+                                <a href="https://github.com/rishi99138/Network-Packet-Sniffer" target="_blank" class="text-pink-600 dark:text-pink-400 hover:text-pink-500 dark:hover:text-pink-300 font-medium flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
                             </div>
                         </div>
                     </div>
                     <!-- Project Card 3 -->
-                    <div class="bg-stone-100 dark:bg-zinc-800/50 dark:backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden group reveal shadow-lg dark:shadow-black/20" style="transition-delay: 200ms;">
-                        <img src="https://placehold.co/600x400/3f3f46/a1a1aa?text=Serverless" alt="AWS Serverless Portfolio" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="bg-violet-100 dark:bg-indigo-800/50 dark:backdrop-blur-sm border border-violet-200 dark:border-indigo-800 rounded-xl overflow-hidden group reveal shadow-lg dark:shadow-black/20" style="transition-delay: 200ms;">
+                        <img src="https://placehold.co/600x400/4f46e5/f9a8d4?text=Serverless" alt="AWS Serverless Portfolio" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-zinc-900 dark:text-white mb-2">AWS Serverless Portfolio</h3>
-                            <p class="text-zinc-600 dark:text-zinc-400 mb-4">A fully serverless site using S3, CloudFront, Lambda, and DynamoDB. Achieved low latency, 99.9% uptime, and CI/CD automation.</p>
+                            <h3 class="text-xl font-semibold text-violet-900 dark:text-white mb-2">AWS Serverless Portfolio</h3>
+                            <p class="text-violet-700 dark:text-violet-300 mb-4">A fully serverless site using S3, CloudFront, Lambda, and DynamoDB. Achieved low latency, 99.9% uptime, and CI/CD automation.</p>
                             <div class="flex gap-4">
-                                <a href="https://github.com/rishi99138/aws-serverless-portfolio" target="_blank" class="text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 font-medium flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
+                                <a href="https://github.com/rishi99138/aws-serverless-portfolio" target="_blank" class="text-pink-600 dark:text-pink-400 hover:text-pink-500 dark:hover:text-pink-300 font-medium flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
                             </div>
                         </div>
                     </div>
@@ -171,17 +171,17 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-24 bg-stone-100 dark:bg-zinc-950">
+        <section id="contact" class="py-24 bg-violet-100 dark:bg-indigo-900">
             <div class="container mx-auto px-6 text-center">
                  <div class="text-center mb-12 reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white">Get In Touch</h2>
-                    <p class="text-zinc-500 dark:text-zinc-400 mt-2">I'm currently open to new opportunities.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-violet-900 dark:text-white">Get In Touch</h2>
+                    <p class="text-violet-600 dark:text-violet-300 mt-2">I'm currently open to new opportunities.</p>
                 </div>
                 <div class="max-w-2xl mx-auto reveal">
-                    <p class="text-zinc-600 dark:text-zinc-400 mb-8 text-lg">
+                    <p class="text-violet-700 dark:text-violet-300 mb-8 text-lg">
                         Have a project in mind or just want to say hello? My inbox is always open. Whether you have a question or just want to connect, feel free to reach out!
                     </p>
-                    <a href="mailto:rishimandal99138@gmail.com" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold text-lg py-4 px-8 rounded-lg transition-transform hover:scale-105">
+                    <a href="mailto:rishimandal99138@gmail.com" class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold text-lg py-4 px-8 rounded-lg transition-transform hover:scale-105">
                         Say Hello
                     </a>
                 </div>
@@ -190,13 +190,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-stone-100 dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800">
+    <footer class="bg-violet-100 dark:bg-indigo-950 border-t border-violet-200 dark:border-indigo-800">
         <div class="container mx-auto px-6 py-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-zinc-500 dark:text-zinc-400">&copy; 2025 Rishi Mandal. All rights reserved.</p>
+                <p class="text-violet-600 dark:text-violet-400">&copy; 2025 Rishi Mandal. All rights reserved.</p>
                 <div class="flex space-x-6">
-                    <a href="https://github.com/rishi99138" target="_blank" class="text-zinc-500 dark:text-zinc-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
-                    <a href="https://www.linkedin.com/in/rishi-mandal-00965231b/" target="_blank" class="text-zinc-500 dark:text-zinc-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                    <a href="https://github.com/rishi99138" target="_blank" class="text-violet-600 dark:text-violet-400 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
+                    <a href="https://www.linkedin.com/in/rishi-mandal-00965231b/" target="_blank" class="text-violet-600 dark:text-violet-400 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
                 </div>
             </div>
         </div>
@@ -259,9 +259,9 @@
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                header.classList.add('bg-stone-50/80', 'dark:bg-zinc-900/80', 'backdrop-blur-sm', 'shadow-lg');
+                header.classList.add('bg-violet-50/80', 'dark:bg-indigo-950/80', 'backdrop-blur-sm', 'shadow-lg');
             } else {
-                header.classList.remove('bg-stone-50/80', 'dark:bg-zinc-900/80', 'backdrop-blur-sm', 'shadow-lg');
+                header.classList.remove('bg-violet-50/80', 'dark:bg-indigo-950/80', 'backdrop-blur-sm', 'shadow-lg');
             }
         });
 
