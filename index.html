@@ -1,1860 +1,255 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Rishi Mandal - Cybersecurity Enthusiast</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishi Mandal | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom glassmorphism effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Custom gradient text */
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-
-<body>
-
-    <!-- Loading Screen -->
-
-    <div class="loader-wrapper">
-
-        <div class="loader">
-
-            <div class="loader-inner">
-
-                <div class="loader-line-wrap">
-
-                    <div class="loader-line"></div>
-
-                </div>
-
-                <div class="loader-line-wrap">
-
-                    <div class="loader-line"></div>
-
-                </div>
-
-                <div class="loader-line-wrap">
-
-                    <div class="loader-line"></div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- Dark Mode Toggle -->
-
-    <div class="theme-toggle">
-
-        <input type="checkbox" id="theme-switch" />
-
-        <label for="theme-switch" class="theme-switch-label">
-
-            <i class="fas fa-sun sun-icon"></i>
-
-            <i class="fas fa-moon moon-icon"></i>
-
-            <div class="toggle-slider"></div>
-
-        </label>
-
-    </div>
-
-
-
-    <!-- Navigation -->
-
-    <nav class="navbar">
-
-        <div class="nav-container">
-
-            <div class="nav-logo">
-
-                <span class="logo-text">Rishi</span>
-
-                <span class="logo-accent">Mandal</span>
-
-            </div>
-
-            <ul class="nav-menu">
-
-                <li><a href="#home" class="nav-link">Home</a></li>
-
-                <li><a href="#about" class="nav-link">About</a></li>
-
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-
-            </ul>
-
-            <div class="nav-toggle">
-
-                <span></span>
-
-                <span></span>
-
-                <span></span>
-
-            </div>
-
-        </div>
-
-    </nav>
-
-
-
-    <!-- Hero Section -->
-
-    <section id="home" class="hero">
-
-        <div class="hero-background">
-
-            <div class="floating-shapes">
-
-                <div class="shape shape-1"></div>
-
-                <div class="shape shape-2"></div>
-
-                <div class="shape shape-3"></div>
-
-                <div class="shape shape-4"></div>
-
-            </div>
-
-        </div>
-
-        <div class="hero-content">
-
-            <div class="hero-text">
-
-                <h1 class="hero-title">
-
-                    <span class="title-line">Hi, I'm</span>
-
-                    <span class="title-line gradient-text">Rishi Mandal</span>
-
-                    <span class="title-line">Cybersecurity Enthusiast</span>
-
-                </h1>
-
-                <p class="hero-description">
-
-                    Passionate about <span class="highlight-text">safeguarding digital ecosystems</span> 
-
-                    with innovative security solutions, vulnerability assessment, and modern cloud architecture
-
-                </p>
-
-                <div class="hero-stats">
-
-                    <div class="stat-item">
-
-                        <span class="stat-number">3+</span>
-
-                        <span class="stat-label">Full-Stack Projects</span>
-
-                    </div>
-
-                    <div class="stat-item">
-
-                        <span class="stat-number">8+</span>
-
-                        <span class="stat-label">Technologies</span>
-
-                    </div>
-
-                    <div class="stat-item">
-
-                        <span class="stat-number">3+</span>
-
-                        <span class="stat-label">Certifications</span>
-
-                    </div>
-
-                </div>
-
-                <div class="hero-buttons">
-
-                    <a href="#projects" class="btn btn-primary">
-
-                        <span>View My Work</span>
-
-                        <i class="fas fa-arrow-right"></i>
-
-                    </a>
-
-                    <a href="#contact" class="btn btn-secondary">
-
-                        <span>Let's Connect</span>
-
-                        <i class="fas fa-paper-plane"></i>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="hero-image">
-
-                <div class="image-container">
-
-                    <div class="tech-orbit">
-
-                        <div class="tech-icon python"><i class="fab fa-python"></i></div>
-
-                        <div class="tech-icon security"><i class="fas fa-shield-alt"></i></div>
-
-                        <div class="tech-icon cloud"><i class="fab fa-aws"></i></div>
-
-                        <div class="tech-icon code"><i class="fas fa-code"></i></div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="scroll-indicator">
-
-            <div class="scroll-line"></div>
-
-            <span>Scroll Down</span>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- About Section -->
-
-    <section id="about" class="about">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <span class="section-tag">Get to know me</span>
-
-                <h2 class="section-title">About Me</h2>
-
-            </div>
-
-            <div class="about-content">
-
-                <div class="about-text">
-
-                    <div class="text-card">
-
-                        <h3>My Journey in Cybersecurity & Cloud Development</h3>
-
-                        <p>I'm a 3rd year Computer Science Engineering student with a specialization in Cybersecurity from <strong>Siksha 'O' Anusandhan</strong>. My passion lies in identifying vulnerabilities, implementing security measures, and building modern cloud-native applications that safeguard digital ecosystems.</p>
-
-                        <p>With expertise spanning cybersecurity, serverless architecture, and full-stack development, I combine security-first thinking with modern development practices to create robust, scalable solutions.</p>
-
-                        
-
-                        <div class="journey-timeline">
-
-                            <div class="timeline-item">
-
-                                <div class="timeline-dot"></div>
-
-                                <div class="timeline-content">
-
-                                    <h4>2023 - Started Cybersecurity Journey</h4>
-
-                                    <p>Began specialization in Cybersecurity at SOA</p>
-
-                                </div>
-
-                            </div>
-
-                            <div class="timeline-item">
-
-                                <div class="timeline-dot"></div>
-
-                                <div class="timeline-content">
-
-                                    <h4>2024 - First Security Projects</h4>
-
-                                    <p>Developed Packet Sniffer and NIDS systems</p>
-
-                                </div>
-
-                            </div>
-
-                            <div class="timeline-item">
-
-                                <div class="timeline-dot"></div>
-
-                                <div class="timeline-content">
-
-                                    <h4>2025 - Cloud Architecture</h4>
-
-                                    <p>Built AWS serverless portfolio with modern architecture</p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="about-sidebar">
-
-                    <div class="education-card">
-
-                        <div class="card-header">
-
-                            <i class="fas fa-graduation-cap"></i>
-
-                            <h3>Education</h3>
-
-                        </div>
-
-                        <div class="education-item">
-
-                            <h4>B.Tech Computer Science (Cybersecurity)</h4>
-
-                            <p class="institution">Siksha 'O' Anusandhan</p>
-
-                            <p class="grade">CGPA: 7.6/10</p>
-
-                            <p class="year">2022 - 2026</p>
-
-                        </div>
-
-                        <div class="education-item">
-
-                            <h4>Higher Secondary (Science)</h4>
-
-                            <p class="institution">Stewart Science College</p>
-
-                            <p class="grade">67.3%</p>
-
-                        </div>
-
-                        <div class="education-item">
-
-                            <h4>Secondary Education</h4>
-
-                            <p class="institution">Cambridge School</p>
-
-                            <p class="grade">90.7%</p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Projects Section -->
-
-    <section id="projects" class="projects">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <span class="section-tag">My Work</span>
-
-                <h2 class="section-title">Featured Projects</h2>
-
-                <p class="section-description">Explore my projects spanning cybersecurity, cloud architecture, and full-stack development</p>
-
-            </div>
-
-            <div class="projects-grid">
-
-                <!-- Project 1: Packet Sniffer -->
-
-                <div class="project-card">
-
-                    <div class="project-image">
-
-                        <div class="project-overlay">
-
-                            <div class="project-links">
-
-                                <a href="https://github.com/rishi99138/packet-sniffer" target="_blank" class="project-link">
-
-                                    <i class="fab fa-github"></i>
-
-                                </a>
-
-                                <a href="#" class="project-link">
-
-                                    <i class="fas fa-external-link-alt"></i>
-
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                        <div class="project-icon">
-
-                            <i class="fas fa-network-wired"></i>
-
-                        </div>
-
-                    </div>
-
-                    <div class="project-content">
-
-                        <div class="project-category">Network Security</div>
-
-                        <h3 class="project-title">Network Packet Sniffer</h3>
-
-                        <p class="project-description">
-
-                            A comprehensive Python-based network packet analysis tool using Scapy to capture and analyze live network traffic in real-time with advanced filtering capabilities.
-
-                        </p>
-
-                        <div class="project-features">
-
-                            <div class="feature-item">
-
-                                <i class="fas fa-check-circle"></i>
-
-                                <span>Real-time packet capture using Scapy</span>
-
-                            </div>
-
-                            <div class="feature-item">
-
-                                <i class="fas fa-check-circle"></i>
-
-                                <span>Protocol identification and filtering</span>
-
-                            </div>
-
-                            <div class="feature-item">
-
-                                <i class="fas fa-check-circle"></i>
-
-                                <span>CSV/JSON export functionality</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="tech-stack">
-
-                            <span class="tech-tag">Python</span>
-
-                            <span class="tech-tag">Scapy</span>
-
-                            <span class="tech-tag">Npcap</span>
-
-                            <span class="tech-tag">Socket Programming</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- Project 2: NIDS -->
-
-                <div class="project-card">
-
-                    <div class="project-image">
-
-                        <div class="project-overlay">
-
-                            <div class="project-links">
-
-                                <a href="https://github.com/rishi99138/Network-intrusion-detection-system-" target="_blank" class="project-link">
-
-                                    <i class="fab fa-github"></i>
-
-                                </a>
-
-                                <a href="#" class="project-link">
-
-                                    <i class="fas fa-external-link-alt"></i>
-
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                        <div class="project-icon">
-
-                            <i class="fas fa-shield-alt"></i>
-
-                        </div>
-
-                    </div>
-
-                    <div class="project-content">
-
-                        <div class="project-category">Intrusion Detection</div>
-
-                        <h3 class="project-title">Network Intrusion Detection System</h3>
-
-                        <p class="project-description">
-
-                            An intelligent security system that monitors network traffic for suspicious activities using pattern recognition to identify potential security threats and breaches.
-
-                        </p>
-
-                        <div class="project-features">
-
-                            <div class="feature-item">
-
-                                <i class="fas fa-check-circle"></i>
-
-                                <span>Advanced pattern recognition with Regex</span>
-
-                            </div>
-
-                            <div class="feature-item">
-
-                                <i class="fas fa-check-circle"></i>
-
-                                <span>Automated email alert system</span>
-
-                            </div>
-
-                            <div class="feature-item">
-
-                                <i class="fas fa-check-circle"></i>
-
-                                <span>Comprehensive logging and reporting</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="tech-stack">
-
-                            <span class="tech-tag">Python</span>
-
-                            <span class="tech-tag">Scapy</span>
-
-                            <span class="tech-tag">Regex</span>
-
-                            <span class="tech-tag">Email Alerts</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- Project 3: AWS Serverless Portfolio -->
-
-                <div class="project-card">
-
-                    <div class="project-image">
-
-                        <div class="project-overlay">
-
-                            <div class="project-links">
-
-                                <a href="https://github.com/rishi99138/aws-serverless-portfolio" target="_blank" class="project-link">
-
-                                    <i class="fab fa-github"></i>
-
-                                </a>
-
-                                <a href="https://d6ilnbijb94mf.cloudfront.net" target="_blank" class="project-link">
-
-                                    <i class="fas fa-external-link-alt"></i>
-
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                        <div class="project-icon">
-
-                            <i class="fab fa-aws"></i>
-
-                        </div>
-
-                    </div>
-
-                    <div class="project-content">
-
-                        <div class="project-category">Cloud Architecture</div>
-
-                        <h3 class="project-title">AWS Serverless Portfolio</h3>
-
-                        <p class="project-description">
-
-                            A modern, responsive portfolio website demonstrating full-stack serverless development using AWS cloud services with global CDN distribution and real-time contact form processing.
-
-                        </p>
-
-                        <div class="project-features">
-
-                            <div class="feature-item">
-
-                                <i class="fas fa-check-circle"></i>
-
-                                <span>Serverless architecture with auto-scaling</span>
-
-                            </div>
-
-                            <div class="feature-item">
-
-                                <i class="fas fa-check-circle"></i>
-
-                                <span>Global CloudFront distribution with HTTPS</span>
-
-                            </div>
-
-                            <div class="feature-item">
-
-                                <i class="fas fa-check-circle"></i>
-
-                                <span>Real-time contact form with DynamoDB storage</span>
-
-                            </div>
-
-                            <div class="feature-item">
-
-                                <i class="fas fa-check-circle"></i>
-
-                                <span>Cost-effective infrastructure (~$1/month)</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="tech-stack">
-
-                            <span class="tech-tag">AWS S3</span>
-
-                            <span class="tech-tag">CloudFront</span>
-
-                            <span class="tech-tag">Lambda</span>
-
-                            <span class="tech-tag">API Gateway</span>
-
-                            <span class="tech-tag">DynamoDB</span>
-
-                            <span class="tech-tag">Node.js</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Skills Section -->
-
-    <section id="skills" class="skills">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <span class="section-tag">What I Do</span>
-
-                <h2 class="section-title">Skills & Expertise</h2>
-
-            </div>
-
-            <div class="skills-content">
-
-                <div class="skills-categories">
-
-                    <div class="skill-category active" data-category="programming">
-
-                        <i class="fas fa-code"></i>
-
-                        <span>Programming</span>
-
-                    </div>
-
-                    <div class="skill-category" data-category="cybersecurity">
-
-                        <i class="fas fa-shield-alt"></i>
-
-                        <span>Cybersecurity</span>
-
-                    </div>
-
-                    <div class="skill-category" data-category="cloud">
-
-                        <i class="fas fa-cloud"></i>
-
-                        <span>Cloud & DevOps</span>
-
-                    </div>
-
-                    <div class="skill-category" data-category="tools">
-
-                        <i class="fas fa-tools"></i>
-
-                        <span>Tools & Tech</span>
-
-                    </div>
-
-                </div>
-
-                <div class="skills-grid">
-
-                    <div class="skills-section active" data-section="programming">
-
-                        <div class="skill-item">
-
-                            <div class="skill-icon">
-
-                                <i class="fab fa-python"></i>
-
-                            </div>
-
-                            <div class="skill-info">
-
-                                <h4>Python</h4>
-
-                                <p>Advanced proficiency in Python for security tools development</p>
-
-                            </div>
-
-                            <div class="skill-level">
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width: 90%"></div>
-
-                                </div>
-
-                                <span>90%</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="skill-item">
-
-                            <div class="skill-icon">
-
-                                <i class="fab fa-java"></i>
-
-                            </div>
-
-                            <div class="skill-info">
-
-                                <h4>Java</h4>
-
-                                <p>Object-oriented programming and application development</p>
-
-                            </div>
-
-                            <div class="skill-level">
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width: 75%"></div>
-
-                                </div>
-
-                                <span>75%</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="skill-item">
-
-                            <div class="skill-icon">
-
-                                <i class="fab fa-js-square"></i>
-
-                            </div>
-
-                            <div class="skill-info">
-
-                                <h4>JavaScript</h4>
-
-                                <p>Full-stack web development and API integration</p>
-
-                            </div>
-
-                            <div class="skill-level">
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width: 80%"></div>
-
-                                </div>
-
-                                <span>80%</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="skill-item">
-
-                            <div class="skill-icon">
-
-                                <i class="fab fa-cuttlefish"></i>
-
-                            </div>
-
-                            <div class="skill-info">
-
-                                <h4>C/C++</h4>
-
-                                <p>System programming and algorithm implementation</p>
-
-                            </div>
-
-                            <div class="skill-level">
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width: 80%"></div>
-
-                                </div>
-
-                                <span>80%</span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="skills-section" data-section="cybersecurity">
-
-                        <div class="skill-item">
-
-                            <div class="skill-icon">
-
-                                <i class="fas fa-network-wired"></i>
-
-                            </div>
-
-                            <div class="skill-info">
-
-                                <h4>Network Security</h4>
-
-                                <p>Network protocol analysis and security implementation</p>
-
-                            </div>
-
-                            <div class="skill-level">
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width: 85%"></div>
-
-                                </div>
-
-                                <span>85%</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="skill-item">
-
-                            <div class="skill-icon">
-
-                                <i class="fas fa-bug"></i>
-
-                            </div>
-
-                            <div class="skill-info">
-
-                                <h4>Vulnerability Assessment</h4>
-
-                                <p>Identifying and analyzing security vulnerabilities</p>
-
-                            </div>
-
-                            <div class="skill-level">
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width: 80%"></div>
-
-                                </div>
-
-                                <span>80%</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="skill-item">
-
-                            <div class="skill-icon">
-
-                                <i class="fas fa-eye"></i>
-
-                            </div>
-
-                            <div class="skill-info">
-
-                                <h4>Intrusion Detection</h4>
-
-                                <p>Monitoring and detecting malicious network activities</p>
-
-                            </div>
-
-                            <div class="skill-level">
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width: 88%"></div>
-
-                                </div>
-
-                                <span>88%</span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="skills-section" data-section="cloud">
-
-                        <div class="skill-item">
-
-                            <div class="skill-icon">
-
-                                <i class="fab fa-aws"></i>
-
-                            </div>
-
-                            <div class="skill-info">
-
-                                <h4>AWS Cloud Services</h4>
-
-                                <p>Serverless architecture design and implementation</p>
-
-                            </div>
-
-                            <div class="skill-level">
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width: 80%"></div>
-
-                                </div>
-
-                                <span>80%</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="skill-item">
-
-                            <div class="skill-icon">
-
-                                <i class="fas fa-server"></i>
-
-                            </div>
-
-                            <div class="skill-info">
-
-                                <h4>Serverless Development</h4>
-
-                                <p>Lambda functions, API Gateway, and microservices</p>
-
-                            </div>
-
-                            <div class="skill-level">
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width: 85%"></div>
-
-                                </div>
-
-                                <span>85%</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="skill-item">
-
-                            <div class="skill-icon">
-
-                                <i class="fas fa-database"></i>
-
-                            </div>
-
-                            <div class="skill-info">
-
-                                <h4>Cloud Databases</h4>
-
-                                <p>DynamoDB and NoSQL database design</p>
-
-                            </div>
-
-                            <div class="skill-level">
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width: 75%"></div>
-
-                                </div>
-
-                                <span>75%</span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="skills-section" data-section="tools">
-
-                        <div class="skill-item">
-
-                            <div class="skill-icon">
-
-                                <i class="fas fa-terminal"></i>
-
-                            </div>
-
-                            <div class="skill-info">
-
-                                <h4>Scapy</h4>
-
-                                <p>Packet manipulation and network analysis</p>
-
-                            </div>
-
-                            <div class="skill-level">
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width: 90%"></div>
-
-                                </div>
-
-                                <span>90%</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="skill-item">
-
-                            <div class="skill-icon">
-
-                                <i class="fas fa-cogs"></i>
-
-                            </div>
-
-                            <div class="skill-info">
-
-                                <h4>ServiceNow</h4>
-
-                                <p>IT service management and automation</p>
-
-                            </div>
-
-                            <div class="skill-level">
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width: 70%"></div>
-
-                                </div>
-
-                                <span>70%</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="skill-item">
-
-                            <div class="skill-icon">
-
-                                <i class="fab fa-git-alt"></i>
-
-                            </div>
-
-                            <div class="skill-info">
-
-                                <h4>Version Control</h4>
-
-                                <p>Git and GitHub for project management</p>
-
-                            </div>
-
-                            <div class="skill-level">
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width: 85%"></div>
-
-                                </div>
-
-                                <span>85%</span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            
-
-            <div class="certifications">
-
-                <h3>Certifications & Training</h3>
-
-                <div class="cert-grid">
-
-                    <div class="cert-card">
-
-                        <div class="cert-icon">
-
-                            <i class="fas fa-certificate"></i>
-
-                        </div>
-
-                        <div class="cert-info">
-
-                            <h4>ServiceNow System Administration</h4>
-
-                            <p>Ongoing Certification</p>
-
-                            <span class="cert-status ongoing">In Progress</span>
-
-                        </div>
-
-                    </div>
-
-                    <div class="cert-card">
-
-                        <div class="cert-icon">
-
-                            <i class="fas fa-rocket"></i>
-
-                        </div>
-
-                        <div class="cert-info">
-
-                            <h4>Geo-data sharing and Cyber Security</h4>
-
-                            <p>ISRO Training Program</p>
-
-                            <span class="cert-status completed">Completed</span>
-
-                        </div>
-
-                    </div>
-
-                    <div class="cert-card">
-
-                        <div class="cert-icon">
-
-                            <i class="fab fa-linkedin"></i>
-
-                        </div>
-
-                        <div class="cert-info">
-
-                            <h4>Cybersecurity Foundations</h4>
-
-                            <p>LinkedIn Learning</p>
-
-                            <span class="cert-status completed">Completed</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- Contact Section -->
-
-    <section id="contact" class="contact">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <span class="section-tag">Get In Touch</span>
-
-                <h2 class="section-title">Let's Connect</h2>
-
-                <p class="section-description">Ready to discuss cybersecurity, cloud architecture, or collaborate on exciting projects</p>
-
-            </div>
-
-            <div class="contact-content">
-
-                <div class="contact-info">
-
-                    <div class="contact-card">
-
-                        <div class="contact-icon">
-
-                            <i class="fas fa-envelope"></i>
-
-                        </div>
-
-                        <div class="contact-details">
-
-                            <h4>Email Me</h4>
-
-                            <a href="mailto:rishimandal99138@gmail.com">rishimandal99138@gmail.com</a>
-
-                        </div>
-
-                    </div>
-
-                    <div class="contact-card">
-
-                        <div class="contact-icon">
-
-                            <i class="fas fa-phone"></i>
-
-                        </div>
-
-                        <div class="contact-details">
-
-                            <h4>Call Me</h4>
-
-                            <a href="tel:+917008616510">+91 7008616510</a>
-
-                        </div>
-
-                    </div>
-
-                    <div class="contact-card">
-
-                        <div class="contact-icon">
-
-                            <i class="fas fa-map-marker-alt"></i>
-
-                        </div>
-
-                        <div class="contact-details">
-
-                            <h4>Location</h4>
-
-                            <span>Cuttack, Odisha, India</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="social-links">
-
-                    <h3>Find me on</h3>
-
-                    <div class="social-grid">
-
-                        <a href="https://www.linkedin.com/in/rishi-mandal-00965231b/" target="_blank" class="social-link linkedin">
-
-                            <i class="fab fa-linkedin-in"></i>
-
-                            <span>LinkedIn</span>
-
-                        </a>
-
-                        <a href="https://github.com/rishi99138" target="_blank" class="social-link github">
-
-                            <i class="fab fa-github"></i>
-
-                            <span>GitHub</span>
-
-                        </a>
-
-                        <a href="mailto:rishimandal99138@gmail.com" class="social-link email">
-
-                            <i class="fas fa-envelope"></i>
-
-                            <span>Email</span>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <footer class="footer">
-
-        <div class="container">
-
-            <div class="footer-content">
-
-                <div class="footer-text">
-
-                    <p>&copy; 2025 Rishi Mandal. Crafted with passion for cybersecurity and cloud innovation.</p>
-
-                </div>
-
-                <div class="footer-links">
-
-                    <a href="#home">Back to Top</a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-
-
-    <script src="script.js"></script>
-
+<body class="bg-slate-900 text-slate-300 selection:bg-sky-400 selection:text-slate-900">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold tracking-wider gradient-text">Rishi Mandal</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
+                <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
+                <a href="2241013090_RishiMandal_ITER.pdf" target="_blank" class="bg-sky-500 hover:bg-sky-600 text-slate-900 font-medium py-2 px-4 rounded-lg transition-colors">Resume</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800/80 backdrop-blur-sm">
+            <a href="#about" class="block py-3 px-6 text-center hover:bg-slate-700">About</a>
+            <a href="#projects" class="block py-3 px-6 text-center hover:bg-slate-700">Projects</a>
+            <a href="#contact" class="block py-3 px-6 text-center hover:bg-slate-700">Contact</a>
+            <a href="2241013090_RishiMandal_ITER.pdf" target="_blank" class="block py-3 px-6 text-center hover:bg-slate-700">Resume</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home/Hero Section -->
+        <section id="home" class="h-screen flex items-center justify-center text-center bg-grid-slate-800/[0.2]">
+            <div class="max-w-3xl px-6">
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-100">
+                    Hi, I'm <span class="gradient-text">Rishi Mandal</span>.
+                    <br>
+                    I engineer secure cloud & network solutions.
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-slate-400">
+                    A final year B.Tech student passionate about cybersecurity, cloud architectures, and solving real-world security challenges.
+                </p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="#contact" class="bg-sky-500 hover:bg-sky-600 text-slate-900 font-semibold py-3 px-6 rounded-lg transition-transform hover:scale-105">Get In Touch</a>
+                    <a href="#projects" class="border border-slate-600 hover:bg-slate-800 text-slate-200 font-semibold py-3 px-6 rounded-lg transition-transform hover:scale-105">View My Work</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100">About Me</h2>
+                    <p class="text-sky-400 mt-2">A little bit about my journey</p>
+                </div>
+                <div class="grid md:grid-cols-5 gap-12 items-center">
+                    <div class="md:col-span-2 reveal">
+                        <div class="relative">
+                            <div class="aspect-square bg-slate-800 rounded-2xl w-full max-w-sm mx-auto flex items-center justify-center">
+                                <img src="rishistudiozoomout.jpg" alt="Rishi Mandal" class="rounded-2xl w-full h-full object-cover">
+                            </div>
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-sky-500 rounded-full -z-10 animate-pulse"></div>
+                            <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-500 rounded-2xl -z-10 transform rotate-12"></div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 reveal">
+                        <h3 class="text-2xl font-semibold text-slate-100 mb-4">Crafting digital solutions with code and creativity.</h3>
+                        <p class="text-slate-400 mb-4">
+                            Hello! I'm Rishi Mandal, a final year B.Tech student in CSE with a specialization in Cybersecurity. I have strong analytical skills and a passion for applying my technical expertise to solve complex security problems.
+                        </p>
+                        <p class="text-slate-400 mb-6">
+                           I'm proficient in Python, cloud/serverless architectures, network forensics, and intrusion detection. I thrive on building secure, efficient, and scalable applications. When I'm not coding, I enjoy exploring the latest advancements in technology.
+                        </p>
+                        <h4 class="text-lg font-semibold text-slate-100 mb-3">My Skills:</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Python</span>
+                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">C/C++</span>
+                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Java</span>
+                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">AWS</span>
+                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Digital Forensics</span>
+                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Intrusion Detection</span>
+                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Malware Analysis</span>
+                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Git</span>
+                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">Scapy</span>
+                            <span class="bg-slate-800 text-sky-400 py-1.5 px-3 rounded-full text-sm font-medium">ServiceNow</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 bg-slate-900/70">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100">My Projects</h2>
+                    <p class="text-sky-400 mt-2">Some of the things I've built</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="glass-card rounded-xl overflow-hidden group reveal">
+                        <img src="https://placehold.co/600x400/1e293b/38bdf8?text=NIDS" alt="Network Intrusion Detection System" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-slate-100 mb-2">Network Intrusion Detection System</h3>
+                            <p class="text-slate-400 mb-4">A real-time, multi-layer NIDS to detect port scans, SQL injection, XSS, and flooding attacks with a SOC-style dashboard.</p>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/rishi99138/Network-intrusion-detection-system-" target="_blank" class="text-sky-400 hover:text-sky-300 flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="glass-card rounded-xl overflow-hidden group reveal" style="transition-delay: 100ms;">
+                        <img src="https://placehold.co/600x400/1e293b/a78bfa?text=Packet+Sniffer" alt="Network Packet Sniffer" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-slate-100 mb-2">Network Packet Sniffer</h3>
+                            <p class="text-slate-400 mb-4">Captures and analyzes packets (TCP, UDP, ICMP) with real-time filtering, deep inspection, and structured export to CSV/JSON.</p>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/rishi99138/Network-Packet-Sniffer" target="_blank" class="text-sky-400 hover:text-sky-300 flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="glass-card rounded-xl overflow-hidden group reveal" style="transition-delay: 200ms;">
+                        <img src="https://placehold.co/600x400/1e293b/f472b6?text=Serverless" alt="AWS Serverless Portfolio" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-slate-100 mb-2">AWS Serverless Portfolio</h3>
+                            <p class="text-slate-400 mb-4">A fully serverless site using S3, CloudFront, Lambda, and DynamoDB. Achieved low latency, 99.9% uptime, and CI/CD automation.</p>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/rishi99138/aws-serverless-portfolio" target="_blank" class="text-sky-400 hover:text-sky-300 flex items-center gap-2"><i data-lucide="github" class="w-5 h-5"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24">
+            <div class="container mx-auto px-6 text-center">
+                 <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100">Get In Touch</h2>
+                    <p class="text-sky-400 mt-2">I'm currently open to new opportunities.</p>
+                </div>
+                <div class="max-w-2xl mx-auto reveal">
+                    <p class="text-slate-400 mb-8 text-lg">
+                        Have a project in mind or just want to say hello? My inbox is always open. Whether you have a question or just want to connect, feel free to reach out!
+                    </p>
+                    <a href="mailto:rishimandal99138@gmail.com" class="inline-block bg-sky-500 hover:bg-sky-600 text-slate-900 font-semibold text-lg py-4 px-8 rounded-lg transition-transform hover:scale-105">
+                        Say Hello
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/50 border-t border-slate-800">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-slate-500">&copy; 2025 Rishi Mandal. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/rishi99138" target="_blank" class="text-slate-500 hover:text-sky-400 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
+                    <a href="https://www.linkedin.com/in/rishi-mandal-00965231b/" target="_blank" class="text-slate-500 hover:text-sky-400 transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Header background on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-slate-900/80', 'backdrop-blur-sm', 'shadow-lg');
+            } else {
+                header.classList.remove('bg-slate-900/80', 'backdrop-blur-sm', 'shadow-lg');
+            }
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+    </script>
 </body>
-
 </html>
-
-
-
-script.js:-
-
-// Modern JavaScript for Portfolio Interactivity with Dark Mode
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-
-    // Loading Screen
-
-    const loader = document.querySelector('.loader-wrapper');
-
-    
-
-    window.addEventListener('load', function() {
-
-        loader.classList.add('hidden');
-
-        setTimeout(() => {
-
-            loader.style.display = 'none';
-
-        }, 500);
-
-    });
-
-
-
-    // Dark Mode Toggle Functionality
-
-    const themeSwitch = document.getElementById('theme-switch');
-
-    const currentTheme = localStorage.getItem('theme');
-
-    
-
-    // Apply saved theme on page load
-
-    if (currentTheme) {
-
-        document.documentElement.setAttribute('data-theme', currentTheme);
-
-        if (currentTheme === 'dark') {
-
-            themeSwitch.checked = true;
-
-        }
-
-    } else {
-
-        // Default to light theme
-
-        document.documentElement.setAttribute('data-theme', 'light');
-
-    }
-
-    
-
-    // Theme switch functionality
-
-    themeSwitch.addEventListener('change', function(e) {
-
-        if (e.target.checked) {
-
-            document.documentElement.setAttribute('data-theme', 'dark');
-
-            localStorage.setItem('theme', 'dark');
-
-        } else {
-
-            document.documentElement.setAttribute('data-theme', 'light');
-
-            localStorage.setItem('theme', 'light');
-
-        }
-
-    });
-
-
-
-    // Navbar Scroll Effect
-
-    const navbar = document.querySelector('.navbar');
-
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    
-
-    window.addEventListener('scroll', function() {
-
-        if (window.scrollY > 100) {
-
-            navbar.classList.add('scrolled');
-
-        } else {
-
-            navbar.classList.remove('scrolled');
-
-        }
-
-        
-
-        // Update active nav link
-
-        updateActiveNavLink();
-
-    });
-
-
-
-    // Smooth Scrolling for Navigation Links
-
-    navLinks.forEach(link => {
-
-        link.addEventListener('click', function(e) {
-
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-
-            const targetSection = document.querySelector(targetId);
-
-            
-
-            if (targetSection) {
-
-                targetSection.scrollIntoView({
-
-                    behavior: 'smooth',
-
-                    block: 'start'
-
-                });
-
-            }
-
-        });
-
-    });
-
-
-
-    // Update Active Navigation Link
-
-    function updateActiveNavLink() {
-
-        const sections = document.querySelectorAll('section[id]');
-
-        const scrollPos = window.scrollY + 100;
-
-
-
-        sections.forEach(section => {
-
-            const sectionTop = section.offsetTop;
-
-            const sectionHeight = section.offsetHeight;
-
-            const sectionId = section.getAttribute('id');
-
-            const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-
-
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-
-                navLinks.forEach(link => link.classList.remove('active'));
-
-                if (navLink) navLink.classList.add('active');
-
-            }
-
-        });
-
-    }
-
-
-
-    // Skills Category Switching
-
-    const skillCategories = document.querySelectorAll('.skill-category');
-
-    const skillSections = document.querySelectorAll('.skills-section');
-
-
-
-    skillCategories.forEach(category => {
-
-        category.addEventListener('click', function() {
-
-            const targetCategory = this.getAttribute('data-category');
-
-            
-
-            // Update active category
-
-            skillCategories.forEach(cat => cat.classList.remove('active'));
-
-            this.classList.add('active');
-
-            
-
-            // Show corresponding skills section
-
-            skillSections.forEach(section => {
-
-                section.classList.remove('active');
-
-                if (section.getAttribute('data-section') === targetCategory) {
-
-                    section.classList.add('active');
-
-                    
-
-                    // Animate skill bars
-
-                    const skillBars = section.querySelectorAll('.skill-progress');
-
-                    skillBars.forEach(bar => {
-
-                        const width = bar.style.width;
-
-                        bar.style.width = '0%';
-
-                        setTimeout(() => {
-
-                            bar.style.width = width;
-
-                        }, 100);
-
-                    });
-
-                }
-
-            });
-
-        });
-
-    });
-
-
-
-    // Intersection Observer for Animations
-
-    const observerOptions = {
-
-        threshold: 0.1,
-
-        rootMargin: '0px 0px -50px 0px'
-
-    };
-
-
-
-    const observer = new IntersectionObserver(function(entries) {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add('animate-in');
-
-                
-
-                // Animate skill bars when skills section comes into view
-
-                if (entry.target.classList.contains('skills')) {
-
-                    const activeSkillBars = entry.target.querySelectorAll('.skills-section.active .skill-progress');
-
-                    activeSkillBars.forEach(bar => {
-
-                        const width = bar.style.width;
-
-                        bar.style.width = '0%';
-
-                        setTimeout(() => {
-
-                            bar.style.width = width;
-
-                        }, 300);
-
-                    });
-
-                }
-
-            }
-
-        });
-
-    }, observerOptions);
-
-
-
-    // Observe sections for animations
-
-    const sectionsToObserve = document.querySelectorAll('section');
-
-    sectionsToObserve.forEach(section => {
-
-        observer.observe(section);
-
-    });
-
-
-
-    // Mobile Navigation Toggle
-
-    const navToggle = document.querySelector('.nav-toggle');
-
-    const navMenu = document.querySelector('.nav-menu');
-
-
-
-    if (navToggle) {
-
-        navToggle.addEventListener('click', function() {
-
-            navMenu.classList.toggle('active');
-
-        });
-
-    }
-
-
-
-    // Close mobile menu when clicking on a link
-
-    navLinks.forEach(link => {
-
-        link.addEventListener('click', function() {
-
-            navMenu.classList.remove('active');
-
-        });
-
-    });
-
-
-
-    // Scroll-triggered Counters
-
-    function animateCounters() {
-
-        const counters = document.querySelectorAll('.stat-number');
-
-        const countObserver = new IntersectionObserver(function(entries) {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    const counter = entry.target;
-
-                    const target = parseInt(counter.textContent.replace('+', ''));
-
-                    let current = 0;
-
-                    const increment = target / 50;
-
-                    const timer = setInterval(() => {
-
-                        current += increment;
-
-                        if (current >= target) {
-
-                            counter.textContent = target + '+';
-
-                            clearInterval(timer);
-
-                        } else {
-
-                            counter.textContent = Math.floor(current) + '+';
-
-                        }
-
-                    }, 30);
-
-                    countObserver.unobserve(counter);
-
-                }
-
-            });
-
-        }, { threshold: 0.5 });
-
-
-
-        counters.forEach(counter => countObserver.observe(counter));
-
-    }
-
-
-
-    // Initialize counter animation
-
-    animateCounters();
-
-
-
-    // Keyboard Navigation Support
-
-    document.addEventListener('keydown', function(e) {
-
-        // Toggle theme with Ctrl + Shift + T
-
-        if (e.ctrlKey && e.shiftKey && e.key === 'T') {
-
-            e.preventDefault();
-
-            themeSwitch.click();
-
-        }
-
-    });
-
-
-
-    // System theme preference detection
-
-    function detectSystemTheme() {
-
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-
-            return 'dark';
-
-        }
-
-        return 'light';
-
-    }
-
-
-
-    // Apply system theme if no preference is stored
-
-    if (!currentTheme) {
-
-        const systemTheme = detectSystemTheme();
-
-        document.documentElement.setAttribute('data-theme', systemTheme);
-
-        if (systemTheme === 'dark') {
-
-            themeSwitch.checked = true;
-
-        }
-
-    }
-
-
-
-    // Listen for system theme changes
-
-    if (window.matchMedia) {
-
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-
-            if (!localStorage.getItem('theme')) {
-
-                const newTheme = e.matches ? 'dark' : 'light';
-
-                document.documentElement.setAttribute('data-theme', newTheme);
-
-                themeSwitch.checked = e.matches;
-
-            }
-
-        });
-
-    }
-
-});
 
