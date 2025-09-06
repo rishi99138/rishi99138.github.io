@@ -37,13 +37,15 @@
                 <a href="#contact" class="text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-white transition-colors">Contact</a>
                 <a href="2241013090_RishiMandal_ITER.pdf" target="_blank" class="bg-black hover:bg-gray-800 text-white dark:bg-white dark:hover:bg-gray-200 dark:text-black font-medium py-2 px-4 rounded-lg transition-colors">Resume</a>
                 <button id="theme-toggle" class="text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-white">
-                    <i id="theme-icon" data-lucide="moon" class="w-6 h-6"></i>
+                    <span class="dark:hidden"><i data-lucide="moon" class="w-6 h-6"></i></span>
+                    <span class="hidden dark:inline"><i data-lucide="sun" class="w-6 h-6"></i></span>
                 </button>
             </div>
             <!-- Mobile Menu Button -->
             <div class="flex items-center gap-4 md:hidden">
                 <button id="theme-toggle-mobile" class="text-gray-800 dark:text-gray-200">
-                    <i id="theme-icon-mobile" data-lucide="moon" class="w-6 h-6"></i>
+                    <span class="dark:hidden"><i data-lucide="moon" class="w-6 h-6"></i></span>
+                    <span class="hidden dark:inline"><i data-lucide="sun" class="w-6 h-6"></i></span>
                 </button>
                 <button id="mobile-menu-btn">
                     <i data-lucide="menu" class="w-6 h-6"></i>
@@ -205,40 +207,24 @@
         // --- THEME TOGGLE SCRIPT ---
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
-        const themeIcon = document.getElementById('theme-icon');
-        const themeIconMobile = document.getElementById('theme-icon-mobile');
         const htmlEl = document.documentElement;
 
-        // Function to set theme
-        const setTheme = (theme) => {
-            if (theme === 'dark') {
-                htmlEl.classList.add('dark');
-                themeIcon.setAttribute('data-lucide', 'sun');
-                themeIconMobile.setAttribute('data-lucide', 'sun');
-            } else {
-                htmlEl.classList.remove('dark');
-                themeIcon.setAttribute('data-lucide', 'moon');
-                themeIconMobile.setAttribute('data-lucide', 'moon');
-            }
-            lucide.createIcons(); // Re-render icons
-            localStorage.setItem('theme', theme);
-        };
-
-        // Check for saved theme in localStorage or user's system preference
+        // On page load, set the theme based on localStorage or system preference
         const savedTheme = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-        if (savedTheme) {
-            setTheme(savedTheme);
-        } else {
-            setTheme(prefersDark ? 'dark' : 'light');
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            htmlEl.classList.add('dark');
         }
 
-        // Event listener for theme toggle button
         const toggleTheme = () => {
-            const currentTheme = htmlEl.classList.contains('dark') ? 'dark' : 'light';
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
+            htmlEl.classList.toggle('dark');
+            // Save the user's preference to localStorage
+            if (htmlEl.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
         };
 
         themeToggleBtn.addEventListener('click', toggleTheme);
@@ -286,4 +272,5 @@
     </script>
 </body>
 </html>
+
 
