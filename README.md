@@ -3,7 +3,7 @@
 Welcome to my professional portfolio! I'm a 3rd-year Computer Science Engineering student specializing in **Cybersecurity** at Siksha 'O' Anusandhan University.
 
 ## Live Portfolio
-**Visit my portfolio:** [https://rishi99138.github.io](https://rishi99138.github.io)
+**Visit my portfolio:** [https://rishi99138-github-io.vercel.app/](https://rishi99138-github-io.vercel.app/)
 
 ## About Me
 I'm passionate about safeguarding digital ecosystems through innovative security solutions, vulnerability assessment, and cloud architecture. My expertise spans cybersecurity and modern cloud development.
