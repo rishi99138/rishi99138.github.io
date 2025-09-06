@@ -37,15 +37,13 @@
                 <a href="#contact" class="text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-white transition-colors">Contact</a>
                 <a href="2241013090_RishiMandal_ITER.pdf" target="_blank" class="bg-black hover:bg-gray-800 text-white dark:bg-white dark:hover:bg-gray-200 dark:text-black font-medium py-2 px-4 rounded-lg transition-colors">Resume</a>
                 <button id="theme-toggle" class="text-gray-800 dark:text-gray-200 hover:text-gray-500 dark:hover:text-white">
-                    <span class="dark:hidden"><i data-lucide="moon" class="w-6 h-6"></i></span>
-                    <span class="hidden dark:inline"><i data-lucide="sun" class="w-6 h-6"></i></span>
+                    {/* Icon is injected here by JavaScript */}
                 </button>
             </div>
             <!-- Mobile Menu Button -->
             <div class="flex items-center gap-4 md:hidden">
                 <button id="theme-toggle-mobile" class="text-gray-800 dark:text-gray-200">
-                    <span class="dark:hidden"><i data-lucide="moon" class="w-6 h-6"></i></span>
-                    <span class="hidden dark:inline"><i data-lucide="sun" class="w-6 h-6"></i></span>
+                     {/* Icon is injected here by JavaScript */}
                 </button>
                 <button id="mobile-menu-btn">
                     <i data-lucide="menu" class="w-6 h-6"></i>
@@ -201,34 +199,48 @@
     </footer>
 
     <script>
-        // Initialize Lucide icons
+        // Initialize all other Lucide icons
         lucide.createIcons();
 
-        // --- THEME TOGGLE SCRIPT ---
+        // --- THEME TOGGLE SCRIPT (NEW, ROBUST VERSION) ---
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
         const htmlEl = document.documentElement;
 
-        // On page load, set the theme based on localStorage or system preference
+        // Manually define SVG icons to avoid library conflicts
+        const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m4.93 19.07 1.41-1.41"/><path d="m17.66 6.34 1.41-1.41"/></svg>`;
+        const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
+
+        // Function to set the theme and icon
+        const setTheme = (theme) => {
+            if (theme === 'dark') {
+                htmlEl.classList.add('dark');
+                themeToggleBtn.innerHTML = sunIcon;
+                themeToggleMobileBtn.innerHTML = sunIcon;
+            } else {
+                htmlEl.classList.remove('dark');
+                themeToggleBtn.innerHTML = moonIcon;
+                themeToggleMobileBtn.innerHTML = moonIcon;
+            }
+            localStorage.setItem('theme', theme);
+        };
+
+        // Set initial theme on page load
         const savedTheme = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+        setTheme(initialTheme);
 
-        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-            htmlEl.classList.add('dark');
-        }
-
+        // Add click listener to toggle the theme
         const toggleTheme = () => {
-            htmlEl.classList.toggle('dark');
-            // Save the user's preference to localStorage
-            if (htmlEl.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
+            const currentTheme = htmlEl.classList.contains('dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
         };
 
         themeToggleBtn.addEventListener('click', toggleTheme);
         themeToggleMobileBtn.addEventListener('click', toggleTheme);
+
 
         // --- MOBILE MENU SCRIPT ---
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -272,5 +284,4 @@
     </script>
 </body>
 </html>
-
 
