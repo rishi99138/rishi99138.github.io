@@ -9,13 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
-        // Set theme on initial load
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark')
-        } else {
-            document.documentElement.classList.remove('dark')
-        }
-        // Tailwind config
+        // Tailwind config must be present for dark mode: 'class' to work
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -39,6 +33,12 @@
                     },
                 }
             }
+        }
+        // Set theme on initial load
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
         }
     </script>
     <style>
@@ -121,8 +121,8 @@
                 <div class="md:col-span-2 flex justify-center items-start animate-on-scroll" style="animation-delay: 0.2s;">
                     <div class="w-64 h-64 rounded-md overflow-hidden relative group">
                         <div class="absolute inset-0 bg-amber-accent/20 z-10 group-hover:bg-transparent transition-all duration-300"></div>
-                        <!-- THIS IS THE CORRECTED IMAGE TAG -->
-                        <img src="profile-photo.jpg" alt="Rishi Mandal" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300">
+                        <!-- IMPORTANT: The image is linked locally. -->
+                        <img src="profile-photo.jpg" alt="Rishi Mandal" class="w-full h-full object-cover transition-all duration-300">
                     </div>
                 </div>
             </div>
