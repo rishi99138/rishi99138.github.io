@@ -63,6 +63,7 @@
                 <a href="#about" class="hover:text-amber-accent transition-colors duration-200">About</a>
                 <a href="#skills" class="hover:text-amber-accent transition-colors duration-200">Skills</a>
                 <a href="#projects" class="hover:text-amber-accent transition-colors duration-200">Projects</a>
+                <a href="#certifications" class="hover:text-amber-accent transition-colors duration-200">Certifications</a>
                 <a href="#contact" class="hover:text-amber-accent transition-colors duration-200">Contact</a>
                 <button id="theme-toggle" class="focus:outline-none">
                     <svg id="theme-toggle-dark-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
@@ -78,6 +79,7 @@
             <a href="#about" class="block py-2 hover:text-amber-accent">About</a>
             <a href="#skills" class="block py-2 hover:text-amber-accent">Skills</a>
             <a href="#projects" class="block py-2 hover:text-amber-accent">Projects</a>
+            <a href="#certifications" class="block py-2 hover:text-amber-accent">Certifications</a>
             <a href="#contact" class="block py-2 hover:text-amber-accent">Contact</a>
             <button id="mobile-theme-toggle" class="focus:outline-none mt-2 flex items-center gap-2">
                  <svg id="mobile-theme-toggle-dark-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
@@ -93,12 +95,12 @@
             <div class="w-full">
                 <p class="text-lg text-amber-accent animate-on-scroll">Hi, my name is</p>
                 <h1 class="text-4xl md:text-7xl font-bold mt-2 text-charcoal-dark dark:text-cream-light animate-on-scroll" style="animation-delay: 0.1s;">Rishi Mandal.</h1>
-                <h2 class="text-3xl md:text-5xl font-bold mt-2 text-charcoal-dark/70 dark:text-cream-light/70 animate-on-scroll" style="animation-delay: 0.2s;">I build things for the web and secure them.</h2>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2 text-charcoal-dark/70 dark:text-cream-light/70 animate-on-scroll" style="animation-delay: 0.2s;">I build intelligent software solutions.</h2>
                 <p class="mt-6 max-w-2xl text-charcoal-dark/80 dark:text-cream-light/80 animate-on-scroll" style="animation-delay: 0.3s;">
-                    I'm a final year B.Tech student specializing in Cybersecurity. I have a passion for creating secure, scalable serverless architectures and robust network security solutions.
+                    I'm a final year B.Tech student skilled in Python and developing cloud-native applications on AWS, with a passion for creating practical Generative AI solutions from concept to deployment.
                 </p>
                 <a href="#projects" class="inline-block mt-8 bg-amber-accent text-charcoal-dark font-bold py-3 px-6 rounded-md hover:bg-opacity-80 transition-all duration-300 animate-on-scroll" style="animation-delay: 0.4s;">
-                    Check out my work!
+                    View My Projects
                 </a>
             </div>
         </section>
@@ -109,20 +111,19 @@
             <div class="grid md:grid-cols-5 gap-10">
                 <div class="md:col-span-3 text-charcoal-dark/80 dark:text-cream-light/80 space-y-4 animate-on-scroll" style="animation-delay: 0.1s;">
                     <p>
-                        Hello! I'm Rishi, a final year Computer Science student with a deep-seated passion for cybersecurity. My journey began with a simple curiosity for how things work, which quickly evolved into a drive to understand how to protect them in the digital world.
+                        Hello! I'm Rishi, a final year Computer Science student with a strong analytical mindset and a passion for building intelligent, scalable software. My journey in tech is driven by a curiosity to solve complex problems and create efficient, impactful solutions.
+                    </p>
+                     <p>
+                        I have hands-on experience in creating practical Generative AI solutions, including architecting a Retrieval-Augmented Generation (RAG) system to enhance developer productivity. I enjoy working across the stack, from cloud infrastructure on AWS to containerization with Docker.
                     </p>
                     <p>
-                        I thrive on building and analyzing systems, from developing multi-layer Network Intrusion Detection Systems to designing cost-effective, globally-distributed serverless applications on AWS. I am proficient in Python and comfortable working with various cloud services and security tools.
-                    </p>
-                    <p>
-                        I'm currently focused on expanding my skills in system administration and am always eager to apply my academic knowledge and project experience to solve real-world security challenges.
+                        I'm currently focused on expanding my skills in cloud-native technologies and am always eager to apply my academic knowledge and project experience to solve real-world challenges.
                     </p>
                 </div>
                 <div class="md:col-span-2 flex justify-center items-start animate-on-scroll" style="animation-delay: 0.2s;">
                     <div class="w-64 h-64 rounded-md overflow-hidden relative group">
                         <div class="absolute inset-0 bg-amber-accent/20 z-10 group-hover:bg-transparent transition-all duration-300"></div>
-                        <!-- IMPORTANT: The image is linked locally. -->
-                        <img src="profile-photo.jpg" alt="Rishi Mandal" class="w-full h-full object-cover transition-all duration-300">
+                        <img src="profile-photo.jpg" alt="Rishi Mandal" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -133,38 +134,40 @@
              <h2 class="text-3xl font-bold mb-8 flex items-center animate-on-scroll">My Skillset</h2>
              <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 rounded-md animate-on-scroll">
-                    <h3 class="font-bold text-lg mb-2">Programming</h3>
+                    <h3 class="font-bold text-lg mb-2">Generative AI & ML</h3>
                     <ul class="list-disc list-inside text-charcoal-dark/80 dark:text-cream-light/80">
-                        <li>Python</li>
-                        <li>C / C++</li>
-                        <li>Java</li>
+                        <li>LangChain</li>
+                        <li>RAG Pipelines</li>
+                        <li>Vector Databases</li>
+                        <li>Prompt Engineering</li>
+                        <li>Transformer Models</li>
                     </ul>
                 </div>
                 <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 rounded-md animate-on-scroll" style="animation-delay: 0.1s;">
-                    <h3 class="font-bold text-lg mb-2">Cybersecurity</h3>
+                    <h3 class="font-bold text-lg mb-2">Programming</h3>
                     <ul class="list-disc list-inside text-charcoal-dark/80 dark:text-cream-light/80">
-                        <li>Digital Forensics</li>
-                        <li>Intrusion Detection</li>
-                        <li>Malware Analysis</li>
-                        <li>Network Forensics</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                        <li>C</li>
                     </ul>
                 </div>
                  <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 rounded-md animate-on-scroll" style="animation-delay: 0.2s;">
-                    <h3 class="font-bold text-lg mb-2">Cloud/Tools</h3>
+                    <h3 class="font-bold text-lg mb-2">Cloud & DevOps</h3>
                     <ul class="list-disc list-inside text-charcoal-dark/80 dark:text-cream-light/80">
                         <li>AWS (Lambda, S3)</li>
-                        <li>ServiceNow</li>
-                        <li>Git & GitHub</li>
-                        <li>Scapy, Npcap</li>
+                        <li>Serverless</li>
+                        <li>Docker</li>
+                        <li>Git & CI/CD</li>
                     </ul>
                 </div>
                  <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 rounded-md animate-on-scroll" style="animation-delay: 0.3s;">
                     <h3 class="font-bold text-lg mb-2">Soft Skills</h3>
                     <ul class="list-disc list-inside text-charcoal-dark/80 dark:text-cream-light/80">
-                        <li>Communication</li>
-                        <li>Teamwork</li>
                         <li>Problem-Solving</li>
                         <li>Adaptability</li>
+                        <li>Communication</li>
+                        <li>Teamwork</li>
                     </ul>
                 </div>
              </div>
@@ -175,6 +178,44 @@
             <h2 class="text-3xl font-bold mb-8 flex items-center animate-on-scroll">Noteworthy Projects</h2>
             <div class="space-y-12">
                 <!-- Project 1 -->
+                <div class="grid md:grid-cols-2 gap-6 items-center animate-on-scroll">
+                    <div>
+                        <p class="text-amber-accent">Featured Project</p>
+                        <h3 class="text-2xl font-bold mt-2">GenAI-Powered Developer Assistant</h3>
+                        <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 my-4 rounded-md shadow-md">
+                            <p>Architected a multi-source RAG pipeline using LangChain to answer complex developer queries with over 90% contextual relevance. Ingested docs and issue data via the GitHub API, reducing information retrieval time by an estimated 40%.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-sm text-amber-accent">
+                            <span>LangChain</span><span>RAG</span><span>Vector DB</span><span>GitHub API</span><span>Docker</span>
+                        </div>
+                        <div class="mt-4">
+                            <a href="https://github.com/rishi99138" target="_blank" class="hover:text-amber-accent transition-colors duration-200">GitHub Link</a>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <img src="https://placehold.co/600x400/1A1A1A/F5F5DC?text=GenAI+Assistant" class="rounded-md opacity-80 hover:opacity-100 transition-opacity duration-300" alt="GenAI Project Placeholder">
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                 <div class="grid md:grid-cols-2 gap-6 items-center animate-on-scroll">
+                     <div class="hidden md:block">
+                        <img src="https://placehold.co/600x400/1A1A1A/F5F5DC?text=Serverless+Portfolio" class="rounded-md opacity-80 hover:opacity-100 transition-opacity duration-300" alt="Serverless Portfolio Placeholder">
+                    </div>
+                    <div class="text-left md:text-right">
+                        <p class="text-amber-accent">Featured Project</p>
+                        <h3 class="text-2xl font-bold mt-2">AWS Serverless Portfolio</h3>
+                         <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 my-4 rounded-md shadow-md">
+                            <p>This very portfolio! A fully serverless site using S3, CloudFront, API Gateway, and Lambda. Achieved global low-latency viewing, optimized costs, and implemented a CI/CD pipeline for automated deployments.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 justify-start md:justify-end text-sm text-amber-accent">
+                            <span>AWS S3</span><span>CloudFront</span><span>Lambda</span><span>API Gateway</span><span>DynamoDB</span>
+                        </div>
+                        <div class="mt-4">
+                            <a href="https://github.com/rishi99138/aws-serverless-portfolio" target="_blank" class="hover:text-amber-accent transition-colors duration-200">GitHub Link</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
                 <div class="grid md:grid-cols-2 gap-6 items-center animate-on-scroll">
                     <div>
                         <p class="text-amber-accent">Featured Project</p>
@@ -193,43 +234,24 @@
                         <img src="https://placehold.co/600x400/1A1A1A/F5F5DC?text=NIDS+Project" class="rounded-md opacity-80 hover:opacity-100 transition-opacity duration-300" alt="NIDS Project Placeholder">
                     </div>
                 </div>
-                <!-- Project 2 -->
-                 <div class="grid md:grid-cols-2 gap-6 items-center animate-on-scroll">
-                     <div class="hidden md:block">
-                        <img src="https://placehold.co/600x400/1A1A1A/F5F5DC?text=Packet+Sniffer" class="rounded-md opacity-80 hover:opacity-100 transition-opacity duration-300" alt="Packet Sniffer Placeholder">
-                    </div>
-                    <div class="text-left md:text-right">
-                        <p class="text-amber-accent">Featured Project</p>
-                        <h3 class="text-2xl font-bold mt-2">Network Packet Sniffer</h3>
-                        <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 my-4 rounded-md shadow-md">
-                            <p>A high-performance packet sniffer capable of capturing and analyzing over 500k packets (TCP, UDP, ICMP) with real-time filtering. Supports structured export to CSV/JSON, improving forensic analysis and log correlation.</p>
-                        </div>
-                        <div class="flex flex-wrap gap-2 justify-start md:justify-end text-sm text-amber-accent">
-                            <span>Python</span><span>Scapy</span><span>Npcap</span>
-                        </div>
-                        <div class="mt-4">
-                            <a href="https://github.com/rishi99138/Network-Packet-Sniffer" target="_blank" class="hover:text-amber-accent transition-colors duration-200">GitHub Link</a>
-                        </div>
-                    </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20">
+            <h2 class="text-3xl font-bold mb-8 flex items-center animate-on-scroll">Certifications & Learning</h2>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-6 rounded-md animate-on-scroll">
+                    <h3 class="font-bold text-lg">ServiceNow System Admin</h3>
+                    <p class="text-charcoal-dark/70 dark:text-cream-light/70">(Ongoing)</p>
                 </div>
-                <!-- Project 3 -->
-                <div class="grid md:grid-cols-2 gap-6 items-center animate-on-scroll">
-                    <div>
-                        <p class="text-amber-accent">Featured Project</p>
-                        <h3 class="text-2xl font-bold mt-2">AWS Serverless Portfolio</h3>
-                        <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 my-4 rounded-md shadow-md">
-                            <p>This very portfolio website! It's a fully serverless application using S3 for hosting, CloudFront for global distribution, API Gateway + Lambda for a backend, and DynamoDB for storage. Optimized for low latency and cost-efficiency.</p>
-                        </div>
-                        <div class="flex flex-wrap gap-2 text-sm text-amber-accent">
-                            <span>AWS S3</span><span>CloudFront</span><span>Lambda</span><span>API Gateway</span><span>DynamoDB</span>
-                        </div>
-                        <div class="mt-4">
-                            <a href="https://github.com/rishi99138/aws-serverless-portfolio" target="_blank" class="hover:text-amber-accent transition-colors duration-200">GitHub Link</a>
-                        </div>
-                    </div>
-                    <div class="hidden md:block">
-                        <img src="https://placehold.co/600x400/1A1A1A/F5F5DC?text=Serverless+Portfolio" class="rounded-md opacity-80 hover:opacity-100 transition-opacity duration-300" alt="Serverless Portfolio Placeholder">
-                    </div>
+                <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-6 rounded-md animate-on-scroll" style="animation-delay: 0.1s;">
+                    <h3 class="font-bold text-lg">Geo-data & Cyber Security</h3>
+                    <p class="text-charcoal-dark/70 dark:text-cream-light/70">ISRO</p>
+                </div>
+                <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-6 rounded-md animate-on-scroll" style="animation-delay: 0.2s;">
+                    <h3 class="font-bold text-lg">Cybersecurity Foundations</h3>
+                    <p class="text-charcoal-dark/70 dark:text-cream-light/70">LinkedIn Learning</p>
                 </div>
             </div>
         </section>
