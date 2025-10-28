@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-
     <script>
+        // Tailwind config must be present for dark mode: 'class' to work
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -34,7 +34,6 @@
                 }
             }
         }
-
         // Set theme on initial load
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark')
@@ -42,7 +41,6 @@
             document.documentElement.classList.remove('dark')
         }
     </script>
-
     <style>
         .animate-on-scroll {
             opacity: 0;
@@ -53,43 +51,37 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Intro Screen Styling */
+        
         #intro-screen {
-            opacity: 1;
-            transition: opacity 1s ease;
+            transition: opacity 0.8s ease-out;
         }
-        #intro-text {
-            font-size: 3rem;
-            letter-spacing: 2px;
-            opacity: 0;
-            transition: opacity 0.7s ease;
+        
+        #animated-name {
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            display: inline-block;
         }
-        @media (min-width: 768px) {
-            #intro-text {
-                font-size: 5rem;
-            }
-        }
-
-        /* Hide body until intro finishes */
-        body {
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-        body.visible {
-            opacity: 1;
+        
+        #skip-button-container {
+            transition: opacity 0.5s ease-out;
         }
     </style>
 </head>
-
 <body class="bg-cream-light text-charcoal-dark dark:bg-charcoal-dark dark:text-cream-light font-sans selection:bg-amber-accent/80 selection:text-white antialiased transition-colors duration-300">
 
-    <!-- Intro / Landing Page -->
-    <div id="intro-screen" class="fixed inset-0 bg-charcoal-dark text-cream-light flex items-center justify-center flex-col text-5xl font-bold z-[9999]">
-        <span id="intro-text"></span>
+    <!-- Intro Landing Page -->
+    <div id="intro-screen" class="fixed inset-0 z-[100] bg-charcoal-dark flex items-center justify-center">
+        <div class="text-center">
+            <div id="name-container" class="text-6xl md:text-8xl font-bold text-amber-accent">
+                <span id="animated-name"></span>
+            </div>
+            <div class="mt-8 opacity-0" id="skip-button-container">
+                <button onclick="skipIntro()" class="text-cream-light/60 hover:text-amber-accent transition-colors duration-200 text-sm">
+                    Skip intro →
+                </button>
+            </div>
+        </div>
     </div>
 
-    <!-- MAIN PORTFOLIO CONTENT -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-cream-light/80 dark:bg-charcoal-dark/80 backdrop-blur-sm transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-amber-accent">RM</a>
@@ -105,7 +97,7 @@
                 </button>
             </nav>
             <button id="mobile-menu-button" class="md:hidden focus:outline-none text-charcoal-dark dark:text-cream-light">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
@@ -115,118 +107,316 @@
             <a href="#certifications" class="block py-2 hover:text-amber-accent">Certifications</a>
             <a href="#contact" class="block py-2 hover:text-amber-accent">Contact</a>
             <button id="mobile-theme-toggle" class="focus:outline-none mt-2 flex items-center gap-2">
-                <svg id="mobile-theme-toggle-dark-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                <svg id="mobile-theme-toggle-light-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                <span id="mobile-theme-text"></span>
+                 <svg id="mobile-theme-toggle-dark-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                 <svg id="mobile-theme-toggle-light-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                 <span id="mobile-theme-text"></span>
             </button>
         </div>
     </header>
 
     <main class="container mx-auto px-6">
-        <!-- Your existing portfolio sections remain the same -->
-        <!-- HERO, ABOUT, SKILLS, PROJECTS, CERTIFICATIONS, CONTACT, FOOTER -->
-        <!-- (Omitted here for brevity — keep your original sections) -->
+        <section id="hero" class="min-h-screen flex items-center pt-20">
+            <div class="w-full">
+                <p class="text-lg text-amber-accent animate-on-scroll">Hi, my name is</p>
+                <h1 class="text-4xl md:text-7xl font-bold mt-2 text-charcoal-dark dark:text-cream-light animate-on-scroll" style="animation-delay: 0.1s;">Rishi Mandal.</h1>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2 text-charcoal-dark/70 dark:text-cream-light/70 animate-on-scroll" style="animation-delay: 0.2s;">I build intelligent software solutions.</h2>
+                <p class="mt-6 max-w-2xl text-charcoal-dark/80 dark:text-cream-light/80 animate-on-scroll" style="animation-delay: 0.3s;">
+                    I'm a final year B.Tech student skilled in Python and developing cloud-native applications on AWS, with a passion for creating practical Generative AI solutions from concept to deployment.
+                </p>
+                <a href="#projects" class="inline-block mt-8 bg-amber-accent text-charcoal-dark font-bold py-3 px-6 rounded-md hover:bg-opacity-80 transition-all duration-300 animate-on-scroll" style="animation-delay: 0.4s;">
+                    View My Projects
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <h2 class="text-3xl font-bold mb-8 flex items-center animate-on-scroll">About Me</h2>
+            <div class="grid md:grid-cols-5 gap-10">
+                <div class="md:col-span-3 text-charcoal-dark/80 dark:text-cream-light/80 space-y-4 animate-on-scroll" style="animation-delay: 0.1s;">
+                    <p>
+                        Hello! I'm Rishi, a final year Computer Science student with a strong analytical mindset and a passion for building intelligent, scalable software. My journey in tech is driven by a curiosity to solve complex problems and create efficient, impactful solutions.
+                    </p>
+                     <p>
+                        I have hands-on experience in creating practical Generative AI solutions, including architecting a Retrieval-Augmented Generation (RAG) system to enhance developer productivity. I enjoy working across the stack, from cloud infrastructure on AWS to containerization with Docker.
+                    </p>
+                    <p>
+                        I'm currently focused on expanding my skills in cloud-native technologies and am always eager to apply my academic knowledge and project experience to solve real-world challenges.
+                    </p>
+                </div>
+                <div class="md:col-span-2 flex justify-center items-start animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="w-64 h-64 rounded-md overflow-hidden relative group">
+                        <div class="absolute inset-0 bg-amber-accent/20 z-10 group-hover:bg-transparent transition-all duration-300"></div>
+                        <img src="profile-photo.jpg" alt="Rishi Mandal" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20">
+             <h2 class="text-3xl font-bold mb-8 flex items-center animate-on-scroll">My Skillset</h2>
+             <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 rounded-md animate-on-scroll">
+                    <h3 class="font-bold text-lg mb-2">Generative AI & ML</h3>
+                    <ul class="list-disc list-inside text-charcoal-dark/80 dark:text-cream-light/80">
+                        <li>LangChain</li>
+                        <li>RAG Pipelines</li>
+                        <li>Vector Databases</li>
+                        <li>Prompt Engineering</li>
+                        <li>Transformer Models</li>
+                    </ul>
+                </div>
+                <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 rounded-md animate-on-scroll" style="animation-delay: 0.1s;">
+                    <h3 class="font-bold text-lg mb-2">Cybersecurity</h3>
+                    <ul class="list-disc list-inside text-charcoal-dark/80 dark:text-cream-light/80">
+                        <li>Digital Forensics</li>
+                        <li>Intrusion Detection</li>
+                        <li>Malware Analysis</li>
+                        <li>Network Forensics</li>
+                    </ul>
+                </div>
+                <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 rounded-md animate-on-scroll" style="animation-delay: 0.2s;">
+                    <h3 class="font-bold text-lg mb-2">Programming</h3>
+                    <ul class="list-disc list-inside text-charcoal-dark/80 dark:text-cream-light/80">
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                        <li>C</li>
+                    </ul>
+                </div>
+                 <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 rounded-md animate-on-scroll" style="animation-delay: 0.3s;">
+                    <h3 class="font-bold text-lg mb-2">Cloud & DevOps</h3>
+                    <ul class="list-disc list-inside text-charcoal-dark/80 dark:text-cream-light/80">
+                        <li>AWS (Lambda, S3)</li>
+                        <li>Serverless</li>
+                        <li>Docker</li>
+                        <li>Git & CI/CD</li>
+                    </ul>
+                </div>
+                 <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 rounded-md animate-on-scroll" style="animation-delay: 0.4s;">
+                    <h3 class="font-bold text-lg mb-2">Soft Skills</h3>
+                    <ul class="list-disc list-inside text-charcoal-dark/80 dark:text-cream-light/80">
+                        <li>Problem-Solving</li>
+                        <li>Adaptability</li>
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                    </ul>
+                </div>
+             </div>
+        </section>
+
+        <section id="projects" class="py-20">
+            <h2 class="text-3xl font-bold mb-8 flex items-center animate-on-scroll">Noteworthy Projects</h2>
+            <div class="space-y-12">
+                <div class="grid md:grid-cols-2 gap-6 items-center animate-on-scroll">
+                    <div>
+                        <p class="text-amber-accent">Featured Project</p>
+                        <h3 class="text-2xl font-bold mt-2">GenAI-Powered Developer Assistant</h3>
+                        <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 my-4 rounded-md shadow-md">
+                            <p>Architected a multi-source RAG pipeline using LangChain to answer complex developer queries with over 90% contextual relevance. Ingested docs and issue data via the GitHub API, reducing information retrieval time by an estimated 40%.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-sm text-amber-accent">
+                            <span>LangChain</span><span>RAG</span><span>Vector DB</span><span>GitHub API</span><span>Docker</span>
+                        </div>
+                        <div class="mt-4">
+                            <a href="https://github.com/rishi99138" target="_blank" class="hover:text-amber-accent transition-colors duration-200">GitHub Link</a>
+                            <a href="https://rishi99138-genai-developer-assistant.hf.space/" target="_blank" class="hover:text-amber-accent transition-colors duration-200 ml-4">Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <img src="genai ss" class="rounded-md opacity-80 hover:opacity-100 transition-opacity duration-300" alt="Screenshot of the GenAI-Powered Developer Assistant">
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 items-center animate-on-scroll">
+                     <div class="hidden md:block">
+                        <img src="aws ss" class="rounded-md opacity-80 hover:opacity-100 transition-opacity duration-300" alt="Screenshot of the AWS Serverless Portfolio">
+                    </div>
+                    <div class="text-left md:text-right">
+                        <p class="text-amber-accent">Featured Project</p>
+                        <h3 class="text-2xl font-bold mt-2">AWS Serverless Portfolio</h3>
+                         <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 my-4 rounded-md shadow-md">
+                            <p>This very portfolio! A fully serverless site using S3, CloudFront, API Gateway, and Lambda. Achieved global low-latency viewing, optimized costs, and implemented a CI/CD pipeline for automated deployments.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 justify-start md:justify-end text-sm text-amber-accent">
+                            <span>AWS S3</span><span>CloudFront</span><span>Lambda</span><span>API Gateway</span><span>DynamoDB</span>
+                        </div>
+                        <div class="mt-4">
+                            <a href="https://github.com/rishi99138/aws-serverless-portfolio" target="_blank" class="hover:text-amber-accent transition-colors duration-200">GitHub Link</a>
+                            <a href="https://d6ilnbijb94mf.cloudfront.net/" target="_blank" class="hover:text-amber-accent transition-colors duration-200 ml-4">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 items-center animate-on-scroll">
+                    <div>
+                        <p class="text-amber-accent">Featured Project</p>
+                        <h3 class="text-2xl font-bold mt-2">Network Intrusion Detection System</h3>
+                        <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 my-4 rounded-md shadow-md">
+                            <p>A real-time, multi-layer NIDS built to detect a variety of network threats including port scans, SQL injection, XSS, and flooding attacks. Features IP geolocation and a SOC-style dashboard for live threat visualization.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-sm text-amber-accent">
+                            <span>Python</span><span>Scapy</span><span>Npcap</span><span>Regex</span><span>Socket</span>
+                        </div>
+                        <div class="mt-4">
+                            <a href="https://github.com/rishi99138/Network-intrusion-detection-system-" target="_blank" class="hover:text-amber-accent transition-colors duration-200">GitHub Link</a>
+                            <a href="https://rishi99138.pythonanywhere.com/" target="_blank" class="hover:text-amber-accent transition-colors duration-200 ml-4">Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <img src="nids ss" class="rounded-md opacity-80 hover:opacity-100 transition-opacity duration-300" alt="Screenshot of the NIDS Project dashboard">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="py-20">
+            <h2 class="text-3xl font-bold mb-8 flex items-center animate-on-scroll">Certifications & Learning</h2>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-6 rounded-md animate-on-scroll">
+                    <h3 class="font-bold text-lg">ServiceNow System Admin</h3>
+                    <p class="text-charcoal-dark/70 dark:text-cream-light/70">(Ongoing)</p>
+                </div>
+                <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-6 rounded-md animate-on-scroll" style="animation-delay: 0.1s;">
+                    <h3 class="font-bold text-lg">Geo-data & Cyber Security</h3>
+                    <p class="text-charcoal-dark/70 dark:text-cream-light/70">ISRO</p>
+                </div>
+                <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-6 rounded-md animate-on-scroll" style="animation-delay: 0.2s;">
+                    <h3 class="font-bold text-lg">Cybersecurity Foundations</h3>
+                    <p class="text-charcoal-dark/70 dark:text-cream-light/70">LinkedIn Learning</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 text-center">
+            <h2 class="text-3xl font-bold mb-2 flex items-center justify-center animate-on-scroll">What's Next?</h2>
+            <p class="text-lg mb-6 max-w-xl mx-auto text-charcoal-dark/80 dark:text-cream-light/80 animate-on-scroll" style="animation-delay: 0.1s;">
+                I'm actively seeking new opportunities and challenges. Whether you have a question, a project idea, or just want to connect, my inbox is always open.
+            </p>
+            <a href="mailto:rishimandal99138@gmail.com" class="inline-block mt-4 bg-amber-accent text-charcoal-dark font-bold py-3 px-8 rounded-md hover:bg-opacity-80 transition-all duration-300 animate-on-scroll" style="animation-delay: 0.2s;">
+                Say Hello
+            </a>
+        </section>
     </main>
 
-    <!-- FOOTER (same as your original code) -->
+    <footer class="py-6 text-center text-charcoal-dark/60 dark:text-cream-light/60">
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="https://github.com/rishi99138" target="_blank" class="hover:text-amber-accent transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/rishi-mandal-00965231b/" target="_blank" class="hover:text-amber-accent transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+        </div>
+        <p>Designed & Built by Rishi Mandal</p>
+    </footer>
 
     <script>
-    // =================== INTRO ANIMATION ===================
-    document.addEventListener("DOMContentLoaded", () => {
-        const introTexts = [
-            "Rishi",
-            "ऋषि",
-            "ঋষি",
-            "ଋଷି"
+        // Intro animation
+        const names = [
+            { text: 'Rishi', lang: 'English' },
+            { text: 'ऋषि', lang: 'Hindi' },
+            { text: 'ঋষি', lang: 'Bengali' },
+            { text: 'ଋଷି', lang: 'Odia' }
         ];
-        const introScreen = document.getElementById("intro-screen");
-        const introText = document.getElementById("intro-text");
-
-        // Only show intro once per browser session
-        if (sessionStorage.getItem("introPlayed")) {
-            introScreen.remove();
-            document.body.classList.add("visible");
-            return;
+        
+        let currentIndex = 0;
+        const animatedName = document.getElementById('animated-name');
+        const introScreen = document.getElementById('intro-screen');
+        const skipButtonContainer = document.getElementById('skip-button-container');
+        
+        function animateName() {
+            animatedName.style.opacity = '0';
+            animatedName.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                animatedName.textContent = names[currentIndex].text;
+                animatedName.style.opacity = '1';
+                animatedName.style.transform = 'translateY(0)';
+                currentIndex++;
+                
+                if (currentIndex < names.length) {
+                    setTimeout(animateName, 1200);
+                } else {
+                    setTimeout(finishIntro, 1500);
+                }
+            }, 600);
         }
-        sessionStorage.setItem("introPlayed", "true");
-
-        let i = 0;
-        function showNext() {
-            if (i < introTexts.length) {
-                introText.style.opacity = 0;
-                setTimeout(() => {
-                    introText.textContent = introTexts[i];
-                    introText.style.opacity = 1;
-                    i++;
-                    setTimeout(showNext, 1000);
-                }, 300);
-            } else {
-                setTimeout(() => {
-                    introScreen.style.opacity = 0;
-                    setTimeout(() => {
-                        introScreen.remove();
-                        document.body.classList.add("visible");
-                    }, 1000);
-                }, 800);
-            }
+        
+        function finishIntro() {
+            introScreen.style.opacity = '0';
+            setTimeout(() => {
+                introScreen.style.display = 'none';
+            }, 800);
         }
-        showNext();
-    });
-
-    // =================== THEME TOGGLE ===================
-    const themeToggleButton = document.getElementById('theme-toggle');
-    const mobileThemeToggleButton = document.getElementById('mobile-theme-toggle');
-    const darkIcon = document.getElementById('theme-toggle-dark-icon');
-    const lightIcon = document.getElementById('theme-toggle-light-icon');
-    const mobileDarkIcon = document.getElementById('mobile-theme-toggle-dark-icon');
-    const mobileLightIcon = document.getElementById('mobile-theme-toggle-light-icon');
-    const mobileThemeText = document.getElementById('mobile-theme-text');
-
-    function updateIcons() {
-        if (document.documentElement.classList.contains('dark')) {
-            darkIcon.classList.add('hidden');
-            lightIcon.classList.remove('hidden');
-            mobileDarkIcon.classList.add('hidden');
-            mobileLightIcon.classList.remove('hidden');
-            mobileThemeText.textContent = 'Light Mode';
-        } else {
-            darkIcon.classList.remove('hidden');
-            lightIcon.classList.add('hidden');
-            mobileDarkIcon.classList.remove('hidden');
-            mobileLightIcon.classList.add('hidden');
-            mobileThemeText.textContent = 'Dark Mode';
+        
+        function skipIntro() {
+            finishIntro();
         }
-    }
-
-    function toggleTheme() {
-        const isDark = document.documentElement.classList.toggle('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        updateIcons();
-    }
-
-    themeToggleButton.addEventListener('click', toggleTheme);
-    mobileThemeToggleButton.addEventListener('click', toggleTheme);
-    updateIcons();
-
-    // =================== MOBILE MENU ===================
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-    // =================== SCROLL ANIMATIONS ===================
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-            }
+        
+        // Start animation after page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                skipButtonContainer.style.opacity = '1';
+                animateName();
+            }, 500);
         });
-    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
-    });
+        // Theme toggle logic
+        const themeToggleButton = document.getElementById('theme-toggle');
+        const mobileThemeToggleButton = document.getElementById('mobile-theme-toggle');
+        
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        const mobileDarkIcon = document.getElementById('mobile-theme-toggle-dark-icon');
+        const mobileLightIcon = document.getElementById('mobile-theme-toggle-light-icon');
+        const mobileThemeText = document.getElementById('mobile-theme-text');
+
+        function updateIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                darkIcon.classList.add('hidden');
+                lightIcon.classList.remove('hidden');
+                mobileDarkIcon.classList.add('hidden');
+                mobileLightIcon.classList.remove('hidden');
+                mobileThemeText.textContent = 'Light Mode';
+            } else {
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+                mobileDarkIcon.classList.remove('hidden');
+                mobileLightIcon.classList.add('hidden');
+                mobileThemeText.textContent = 'Dark Mode';
+            }
+        }
+
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateIcons();
+        }
+
+        themeToggleButton.addEventListener('click', toggleTheme);
+        mobileThemeToggleButton.addEventListener('click', toggleTheme);
+        
+        // Initial icon state
+        updateIcons();
+
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
