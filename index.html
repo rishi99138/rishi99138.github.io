@@ -57,12 +57,8 @@
         }
         
         #animated-name {
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
             display: inline-block;
-        }
-        
-        #skip-button-container {
-            transition: opacity 0.5s ease-out;
         }
     </style>
 </head>
@@ -223,20 +219,20 @@
                 </div>
                 <div class="grid md:grid-cols-2 gap-6 items-center animate-on-scroll">
                      <div class="hidden md:block">
-                        <img src="aws ss" class="rounded-md opacity-80 hover:opacity-100 transition-opacity duration-300" alt="Screenshot of the AWS Serverless Portfolio">
+                        <img src="resume-parser-ss.png" class="rounded-md opacity-80 hover:opacity-100 transition-opacity duration-300" alt="Screenshot of the Resume Parser showing job match score and skills analysis">
                     </div>
                     <div class="text-left md:text-right">
                         <p class="text-amber-accent">Featured Project</p>
-                        <h3 class="text-2xl font-bold mt-2">AWS Serverless Portfolio</h3>
+                        <h3 class="text-2xl font-bold mt-2">AI-Powered Resume Parser</h3>
                          <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-4 my-4 rounded-md shadow-md">
-                            <p>This very portfolio! A fully serverless site using S3, CloudFront, API Gateway, and Lambda. Achieved global low-latency viewing, optimized costs, and implemented a CI/CD pipeline for automated deployments.</p>
+                            <p>Built a serverless resume parsing system that extracts structured data from PDF resumes using AWS services. Leverages AWS Textract for OCR and Claude AI for intelligent information extraction, processing resumes in real-time with automated workflows.</p>
                         </div>
                         <div class="flex flex-wrap gap-2 justify-start md:justify-end text-sm text-amber-accent">
-                            <span>AWS S3</span><span>CloudFront</span><span>Lambda</span><span>API Gateway</span><span>DynamoDB</span>
+                            <span>AWS Lambda</span><span>AWS Textract</span><span>Claude AI</span><span>S3</span><span>CloudFront</span>
                         </div>
                         <div class="mt-4">
-                            <a href="https://github.com/rishi99138/aws-serverless-portfolio" target="_blank" class="hover:text-amber-accent transition-colors duration-200">GitHub Link</a>
-                            <a href="https://d6ilnbijb94mf.cloudfront.net/" target="_blank" class="hover:text-amber-accent transition-colors duration-200 ml-4">Live Demo</a>
+                            <a href="https://github.com/rishi99138/resume-parser-aws" target="_blank" class="hover:text-amber-accent transition-colors duration-200">GitHub Link</a>
+                            <a href="https://dcmjz9ryxgbqw.cloudfront.net/" target="_blank" class="hover:text-amber-accent transition-colors duration-200 ml-4">Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -266,16 +262,16 @@
             <h2 class="text-3xl font-bold mb-8 flex items-center animate-on-scroll">Certifications & Learning</h2>
             <div class="grid md:grid-cols-3 gap-6 text-center">
                 <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-6 rounded-md animate-on-scroll">
-                    <h3 class="font-bold text-lg">ServiceNow System Admin</h3>
-                    <p class="text-charcoal-dark/70 dark:text-cream-light/70">(Ongoing)</p>
+                    <h3 class="font-bold text-lg">ServiceNow CSA</h3>
+                    <p class="text-charcoal-dark/70 dark:text-cream-light/70">Certified System Administrator</p>
                 </div>
                 <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-6 rounded-md animate-on-scroll" style="animation-delay: 0.1s;">
-                    <h3 class="font-bold text-lg">Geo-data & Cyber Security</h3>
-                    <p class="text-charcoal-dark/70 dark:text-cream-light/70">ISRO</p>
+                    <h3 class="font-bold text-lg">ServiceNow CAD</h3>
+                    <p class="text-charcoal-dark/70 dark:text-cream-light/70">(Preparing)</p>
                 </div>
                 <div class="bg-cream-light dark:bg-charcoal-dark border border-amber-accent/30 p-6 rounded-md animate-on-scroll" style="animation-delay: 0.2s;">
-                    <h3 class="font-bold text-lg">Cybersecurity Foundations</h3>
-                    <p class="text-charcoal-dark/70 dark:text-cream-light/70">LinkedIn Learning</p>
+                    <h3 class="font-bold text-lg">Geo-data & Cyber Security</h3>
+                    <p class="text-charcoal-dark/70 dark:text-cream-light/70">ISRO</p>
                 </div>
             </div>
         </section>
@@ -315,7 +311,6 @@
         let currentIndex = 0;
         const animatedName = document.getElementById('animated-name');
         const introScreen = document.getElementById('intro-screen');
-        const skipButtonContainer = document.getElementById('skip-button-container');
         
         function animateName() {
             animatedName.style.opacity = '0';
@@ -328,29 +323,25 @@
                 currentIndex++;
                 
                 if (currentIndex < names.length) {
-                    setTimeout(animateName, 700);
+                    setTimeout(animateName, 800);
                 } else {
-                    setTimeout(finishIntro, 900);
+                    setTimeout(finishIntro, 1000);
                 }
-            }, 350);
+            }, 400);
         }
         
         function finishIntro() {
             introScreen.style.opacity = '0';
             setTimeout(() => {
                 introScreen.style.display = 'none';
-            }, 800);
-        }
-        
-        function skipIntro() {
-            finishIntro();
+            }, 600);
         }
         
         // Start animation after page load
         window.addEventListener('load', () => {
             setTimeout(() => {
                 animateName();
-            }, 500);
+            }, 300);
         });
 
         // Theme toggle logic
@@ -414,5 +405,3 @@
     </script>
 </body>
 </html>
-
-
